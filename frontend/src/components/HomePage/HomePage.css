@@ -1,0 +1,12 @@
+.homepage {
+  min-height: 10vh; /* מתאים לגובה המסך */
+  display: flex;
+  flex-direction: column;
+  color: #000000;
+  overflow: hidden;
+}
+
+.homepage-content {
+  margin-top: 100px; /* מרווח סטנדרטי */
+}
+

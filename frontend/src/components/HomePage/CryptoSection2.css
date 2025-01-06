@@ -1,0 +1,45 @@
+  
+  .crypto-section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .crypto-section-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .crypto-service-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .crypto-service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .crypto-service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+  }
+  
+  .crypto-service-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .crypto-service-description {
+    font-size: 1rem;
+    color: #666;
+  }
+  

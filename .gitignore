@@ -1,0 +1,11 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore build files
+build/
+
+# Ignore local Git repositories in subdirectories
+frontend/.git
+
+# Ignore environment files
+.env

@@ -1,0 +1,316 @@
+.header {
+    width: 50%; /* הגדרת אורך ל-50% */
+    height: 50px;
+    background: linear-gradient(90deg, #f4c10f, #f4c10f, #f4c10f);
+    color: white;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0; /* ה-header מוצמד לימין */
+    z-index: 1000;
+    padding: 0 20px; /* ריווח פנימי */
+    border-top-right-radius: 25px; /* פינה מעוגלת בצד שמאל למעלה */
+    border-bottom-right-radius: 25px; /* פינה מעוגלת בצד שמאל למטה */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* צל עדין */
+  }
+  
+  /* מיכל הקונטיינר */
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* לוגו */
+  .logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo h1 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* לוגו במובייל */
+.logomobilemenu {
+    display: none; /* מוסתר כברירת מחדל */
+  }
+  
+  
+/* ניווט */
+.nav {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end; /* הניווט מוצמד לימין */
+    direction: rtl; /* מימין לשמאל */
+    margin-right: 20px; /* ריווח בין הקצה לפריטים */
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* ריווח אחיד בין פריטים */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav ul li {
+    position: relative;
+    text-align: right; /* יישור לימין */
+    white-space: nowrap; /* מונע ירידת שורות */
+  }
+  
+  .nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #36352e; /* גוון כהה */
+    padding: 10px 20px; /* ריווח פנימי אחיד */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px; /* פינות מעוגלות */
+  }
+  
+  .nav ul li a:hover {
+    color: #ffffff;
+    background-color: #f4c10f; /* רקע זהב */
+  }
+  
+  /* Dropdown Menu */
+  .nav ul li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 0; /* מותאם ל-RTL */
+    background: linear-gradient(120deg, #f7fafc, #edf1f5); /* רקע עדין */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* פינות מעוגלות */
+    padding: 10px 0;
+    list-style: none;
+    z-index: 1000;
+    min-width: 160px; /* רוחב מינימלי */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav ul li .dropdown-menu li {
+    padding: 10px 15px;
+    text-align: right; /* יישור לימין */
+  }
+  
+  .nav ul li .dropdown-menu li a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #36352e;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .nav ul li .dropdown-menu li a:hover {
+    color: #ffffff;
+    background: #f4c10f; /* רקע זהב */
+    border-radius: 5px;
+    transform: scale(1.05); /* אפקט קל */
+  }
+  
+  /* אפקט על הצגת תפריט נפתח */
+  .nav ul li:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
+  .btn-signup {
+    padding: 8px 16px; /* ריווח פנימי קטן יותר */
+    font-size: 15px; /* גודל קטן */
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(45deg, #f4c10f, #ffffff); /* מעבר צבעים זהוב */
+    border: none;
+    border-radius: 20px; /* פינות מעוגלות */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn-signup:hover {
+    transform: scale(1.05); /* אפקט קל */
+    background: linear-gradient(45deg, #ffffff, #f4c10f); /* מעבר צבעים הפוך */
+  }
+  
+/* כפתור הרשמה יופיע רק בדסקטופ */
+.desktop-only {
+    display: none;
+  }
+  
+/* כפתור תפריט יופיע רק במובייל */
+@media screen and (min-width: 769px) {
+    .desktop-only {
+      display: flex;
+    }
+  }
+  
+  /* רספונסיביות למובייל */
+  @media screen and (max-width: 768px) {
+    .header {
+      width: 50%; /* התאמת האורך ל-50% */
+      height: 60px;
+      border-top-right-radius: 25px;
+      border-bottom-right-radius: 25px;
+      transition: all 0.3s ease-in-out; /* אנימציה עדינה */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* צל מודגש יותר */
+      right: 0; /* ה-header מוצמד לימין */
+    }
+  
+/* תפריט במצב סגור */
+.nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* מחוץ למסך בצד ימין */
+    height: 70vh; /* גובה 50% של המסך */
+    width: 200px; /* רוחב */
+    background: rgba(255, 255, 255, 0.2); /* רקע שקוף למחצה */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3); /* צל כהה */
+    z-index: 9999;
+    transition: all 0.4s ease-in-out; /* אנימציה חלקה */
+    backdrop-filter: blur(10px); /* טשטוש רקע */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  /* תפריט במצב פתוח */
+  .menu-open {
+    right: 0; /* נכנס למסך */
+    transition: all 0.4s ease-in-out;
+  }
+  
+  /* כפתור פתיחת התפריט */
+  .menu-toggle {
+    position: absolute;
+    top: 10px;
+    right: -150px; /* מחוץ להדר */
+    font-size: 24px;
+    color: #2b2828; /* צבע לבן */
+    cursor: pointer;
+    border: 0.2px solid #acb8b8; /* גבול נאון */
+    background: #ffffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px #848b8b; /* זוהר קל */
+    transition: all 0.3s ease-in-out;
+  }
+  .menu-toggle:hover {
+    transform: rotate(90deg) scale(1.1); /* אפקט סיבוב */
+    box-shadow: 0 0 10px #d0dada;
+  }
+  
+  /* פריטים בתפריט */
+  .nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    width: 100%;
+  }
+  
+  .nav ul li a {
+    margin-bottom: 20px; /* רווח של 20px בין כל פריט */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #554c4c; /* צבע טקסט */
+    padding: 10px 40px;
+    border-radius: 15px;
+    background: #ffffffc9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .nav ul li:last-child {
+    margin-bottom: 0; /* מבטיח שלפריט האחרון לא יהיה רווח מיותר */
+  }
+  .nav ul li a:hover {
+    background: linear-gradient(135deg, #00e6e6, #f7ffff); /* צבע נאון */
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 230, 230, 0.5);
+    transform: translateX(10px); /* זז ימינה */
+  }
+  
+  /* תפריט דרופדאון */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+  }
+  
+  .nav ul li:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu li a {
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
+  .dropdown-menu li a:hover {
+    background: #00e6e6;
+    color: #121212;
+  }
+  
+  /* אנימציה לפתיחה */
+  @keyframes slideIn {
+    from {
+      right: -300px;
+    }
+    to {
+      right: 0;
+    }
+  }
+  
+  .menu-open {
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+      /* לוגו */
+      .logomobilemenu {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* יישור לשמאל */
+        margin-right: 80px; /* מרווח נוסף משמאל */
+        margin-top: 60px;
+      }
+      
+      .logomobilemenu h1 {
+        font-size: 15px;
+        font-weight: bold;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+  }
+  

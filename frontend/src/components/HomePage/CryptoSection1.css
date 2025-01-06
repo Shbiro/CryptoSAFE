@@ -1,0 +1,159 @@
+/* ייבוא פונט */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* === כותרת מעוצבת עם רקע === */
+.crypto-header {
+  width: 100%;
+  background: linear-gradient(45deg, #f4c10f, #ff5722);
+  color: #ffffff;
+  padding: 30px 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  box-sizing: border-box; /* כדי שה-padding לא ישפיע על הרוחב */
+}
+
+.crypto-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.crypto-header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #ffe4b5;
+}
+
+/* אנימציית fadeIn */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* === פריסה לדסקטופ === */
+.crypto-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  gap: 200px; /* מרווח בין האלמנטים */
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+
+
+/* ביטקוין גדול במרכז */
+.bitcoin-center {
+  margin-top: 20px;
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.large-bitcoin {
+  width: 600px;
+  height: auto;
+  animation: spinAndBounce 5s infinite ease-in-out;
+}
+
+/* אנימציית סיבוב וקפיצה */
+@keyframes spinAndBounce {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(0) rotate(180deg);
+  }
+  75% {
+    transform: translateY(20px) rotate(270deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
+
+/* אפקט מעבר עדין */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.crypto-prices-table table {
+  animation: fade-in 0.8s ease-in-out;
+}
+
+/* === רספונסיביות === */
+
+/* למסכים בינוניים (טאבלטים) */
+@media (max-width: 1024px) {
+  .crypto-layout {
+    flex-direction: column; /* שינוי פריסה לעמודה */
+    gap: 50px; /* מרווח קטן יותר */
+    padding: 20px;
+  }
+
+  .large-bitcoin {
+    width: 600px; /* התאמת גודל התמונה */
+  }
+
+  .bitcoin-info {
+    margin-left: 0;
+    text-align: center; /* יישור טקסט למרכז */
+  }
+
+  .crypto-header h1 {
+    font-size: 2rem;
+  }
+
+  .crypto-header p {
+    font-size: 1rem;
+  }
+}
+
+/* למסכים קטנים (טלפונים ניידים) */
+@media (max-width: 768px) {
+  .crypto-layout {
+    padding: 15px;
+  }
+
+  .large-bitcoin {
+    width: 350px; /* גודל קטן יותר */
+    margin-left: 20px;
+  }
+
+  .crypto-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .crypto-header p {
+    font-size: 0.9rem;
+  }
+
+  .bitcoin-info p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .crypto-prices {
+    flex: 4;
+    margin-left: 25px;
+  }
+}
+

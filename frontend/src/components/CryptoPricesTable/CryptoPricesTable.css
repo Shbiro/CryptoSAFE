@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+.crypto-prices-table {
+    margin: 30px auto;
+    text-align: center;
+    width: 95%; /* הרחבת הטבלה למסכים גדולים */
+    max-width: 1200px; /* גודל מקסימלי מוגדל */
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px; /* הגדלת הריווח הפנימי */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* צל יותר מודגש */
+    font-family: 'Inter', sans-serif;
+    color: #2c3e50;
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.crypto-prices-table h2 {
+    font-size: 26px; /* הגדלת כותרת */
+    margin-bottom: 20px;
+    color: #333333;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-family: 'Inter', sans-serif;
+}
+
+.crypto-prices-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif;
+}
+
+.crypto-prices-table th,
+.crypto-prices-table td {
+    padding: 20px; /* הגדלת ריווח בתאים */
+    font-size: 16px; /* טקסט מוגדל */
+    border: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.crypto-prices-table th {
+    background: #f2f2f2; /* צבע רקע מעודכן */
+    color: #444444;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.crypto-prices-table td {
+    background: #ffffff;
+    color: #333333;
+    transition: background 0.2s ease-in-out;
+}
+
+.crypto-prices-table tr:nth-child(even) td {
+    background: #f9f9f9;
+}
+
+.crypto-prices-table tr:hover td {
+    background: #e8f5e9;
+}
+
+.crypto-prices-table th::after {
+    content: '';
+    display: block;
+    width: 50px; /* הגדלת האפקט של הקו */
+    height: 3px; /* קו יותר עבה */
+    margin: 8px auto 0;
+    background: #76c7c0;
+    border-radius: 1px;
+}
+
+/* אפקט מעבר עדין */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.crypto-prices-table table {
+    animation: fade-in 1s ease-in-out;
+}
+/* למסכים קטנים (מוביילים) */
+@media (max-width: 768px) {
+    .crypto-prices-table {
+        padding: 0px;
+        width: 100%; /* משתמשים במלוא הרוחב */
+    }
+
+    .crypto-prices-table h2 {
+        font-size: 22px;
+    }
+
+    .crypto-prices-table th,
+    .crypto-prices-table td {
+        padding: 26px;
+        font-size: 18px;
+    }
+
+    .crypto-prices-table table {
+        display: block;
+        overflow-x: auto; /* גלילה אופקית למניעת חיתוך */
+    }
+}

@@ -1,0 +1,121 @@
+.contact-form {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .contact-form h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.8rem;
+    text-align: right;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: right;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-align: right;
+  }
+  
+  .contact-form .send-button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #f4c10f, #ff5722);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.0rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .contact-form .send-button:hover {
+    background: linear-gradient(45deg, #ff5722, #f4c10f);
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+/* אנימציית מטבעות קריפטו */
+.crypto-animation {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .coin {
+    position: absolute;
+    top: -50px;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    animation: fall 3s infinite ease-in-out;
+  }
+  
+  /* אנימציה לנפילה */
+  @keyframes fall {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(400px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  
+  
+  .success-message {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(45deg, #f4c10f, #ff5722);
+    color: white; /* צבע הכתב ברירת מחדל */
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .success-message h2 {
+    color: white; /* צבע הכותרת */
+    font-size: 1.8rem; /* גודל כותרת */
+    margin-bottom: 1rem;
+  }
+  
+  .success-message p {
+    color: white; /* צבע הטקסט */
+    font-size: 1rem;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

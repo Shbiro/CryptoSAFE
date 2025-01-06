@@ -1,0 +1,33 @@
+.about-section {
+    width: 100%;
+    background: linear-gradient(45deg, #f4c10f, #ff5722);
+    color: #ffffff;
+    padding: 30px 30px;
+    text-align: left; /* יישור משמאל */
+    direction: ltr; /* כיוון הטקסט משמאל לימין */
+    margin-bottom: 10px;
+    box-sizing: border-box; /* כדי שה-padding לא ישפיע על הרוחב */
+  }
+  
+  .about-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-align: center; /* כותרת מיושרת לשמאל */
+  }
+  
+  .about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-align: right; /* יישור הטקסט לשמאל */
+  }
+  
+  .about-text strong {
+    color: #007bff; /* הדגשת שם החברה */
+    font-weight: 600;
+  }
+  
