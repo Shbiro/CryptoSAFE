@@ -23,7 +23,7 @@ const ContactForm = () => {
     setStatus('שולח נתונים...');
 
     try {
-      const response = await fetch('http://16.171.135.218/api/contact', {
+      const response = await fetch('https://cryptosafe.co.il/api/prices', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

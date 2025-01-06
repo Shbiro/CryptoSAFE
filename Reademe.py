@@ -9,11 +9,26 @@
 # pm2 start LiveCryptoPrice.py --interpreter "C:\Users\USER\AppData\Local\Programs\Python\Python312\python.exe"
 
 # העלה ל git
+#git status
 #git add .
-#git commit -m "Description of changes"
+#git commit -m "change ip form and conatct"
 #git push
 
 
-#ssh -i "AmirCs.pem" ubuntu@16.171.135.218
+#ssh -i "AmirCs.pem" ubuntu@51.21.116.172
 
 #git clone https://Shbiro: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@github.com/Shbiro/CryptoSAFE.git
+
+# עדכונים ב ssh לאחר עדכון ב git
+#cd ~/CryptoSAFE
+#git pull origin main
+#cd frontend
+# npm install
+# npm run build
+#cp -r build/* ../build
+#cd ..
+#pm2 restart all
+
+# התקנת ספריות בpython ssh
+
+#pip3 install python-dotenv --break-system-packages

@@ -8,7 +8,7 @@ function CryptoPricesTable() {
   useEffect(() => {
     const fetchPrices = async () => {
       try {
-        const response = await fetch('http://16.171.135.218:/api/prices'); // URL של השרת
+        const response = await fetch('https://cryptosafe.co.il/api/prices'); // URL של השרת
         const data = await response.json();
         setPrices(data);
         setLoading(false);
