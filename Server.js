@@ -1,13 +1,15 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const path = require('path'); // ייבוא path
+const path = require('path');
 const Airtable = require('airtable');
 
 // Airtable credentials
 const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
 const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
 const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME;
+const AIRTABLE_TABLE_NAME2 = process.env.AIRTABLE_TABLE_NAME2;
+const AIRTABLE_TABLE_NAME3 = process.env.AIRTABLE_TABLE_NAME3; // הוספת משתנה סביבה זה
 
 // Initialize Airtable
 const base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_BASE_ID);
@@ -19,8 +21,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// ** Serve React frontend as static files **
-const buildPath = path.join(__dirname, 'build'); // מיקום ה-build של React
+// Serve React frontend as static files
+const buildPath = path.join(__dirname, 'build');
 app.use(express.static(buildPath));
 
 // API to fetch crypto prices from Airtable
@@ -49,7 +51,7 @@ app.post('/api/contact', async (req, res) => {
   const { name, email, phone, message } = req.body;
 
   try {
-    await base(process.env.AIRTABLE_TABLE_NAME2).create([
+    await base(AIRTABLE_TABLE_NAME2).create([
       {
         fields: {
           Name: name || '',
@@ -66,9 +68,72 @@ app.post('/api/contact', async (req, res) => {
   }
 });
 
-// ** Catch-all route to serve React frontend **
+// API to handle login validation
+app.post('/api/login', async (req, res) => {
+  const { username, password } = req.body;
+
+  try {
+    // Fetch user credentials from Airtable
+    const records = await base(AIRTABLE_TABLE_NAME3).select().firstPage();
+
+    const isValidUser = records.some(
+      (record) =>
+        record.fields.UserName === username && record.fields.PassWord === password
+    );
+
+    if (isValidUser) {
+      res.status(200).json({ success: true, message: 'Login successful' });
+    } else {
+      res.status(401).json({ success: false, message: 'Invalid username or password' });
+    }
+  } catch (error) {
+    console.error('Error validating credentials:', error);
+    res.status(500).json({ success: false, error: 'Internal server error' });
+  }
+});
+
+app.post('/api/tasks', async (req, res) => {
+  const { taskName, description, status } = req.body;
+
+  try {
+    await base(process.env.AIRTABLE_TABLE_NAME_TASKS).create([
+      {
+        fields: {
+          TaskName: taskName || '', // שם המשימה
+          Description: description || '', // תיאור
+          Status: status || 'Not Started', // סטטוס (ברירת מחדל: Not Started)
+        },
+      },
+    ]);
+    res.status(200).json({ success: true, message: 'Task successfully added to Airtable' });
+  } catch (error) {
+    console.error('Error adding task to Airtable:', error);
+    res.status(500).json({ success: false, error: 'Failed to add task to Airtable' });
+  }
+});
+
+app.get('/api/tasks', async (req, res) => {
+  try {
+    const records = await base(process.env.AIRTABLE_TABLE_NAME_TASKS).select().all();
+
+    const tasks = records.map((record) => ({
+      id: record.id,
+      taskName: record.fields.TaskName || '',
+      description: record.fields.Description || '',
+      status: record.fields.Status || '',
+    }));
+
+    res.status(200).json(tasks);
+  } catch (error) {
+    console.error('Error fetching tasks from Airtable:', error);
+    res.status(500).json({ error: 'Failed to fetch tasks from Airtable' });
+  }
+});
+
+
+// Catch-all route to serve React frontend
 app.get('*', (req, res) => {
-  res.sendFile(path.join(buildPath, 'index.html')); // מחזיר את ה-index.html של React
+  res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 // Start the server
