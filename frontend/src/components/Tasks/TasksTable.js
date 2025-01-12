@@ -28,9 +28,9 @@ function TasksTable() {
   }, []);
 
   return (
-    <div className="tasks-table-container">
+    <div>
       <h1>Tasks List</h1>
-      <table className="tasks-table">
+      <table>
         <thead>
           <tr>
             <th>Task Name</th>

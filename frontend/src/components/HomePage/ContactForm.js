@@ -9,9 +9,8 @@ const ContactForm = () => {
     message: '',
   });
 
-  const [status, setStatus] = useState('');
-  const [animationTriggered, setAnimationTriggered] = useState(false); // מצב עבור האנימציה
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false); // מצב להודעה
+  const [animationTriggered, setAnimationTriggered] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +19,6 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('שולח נתונים...');
 
     try {
       const response = await fetch('https://cryptosafe.co.il/api/contact', {
@@ -32,63 +30,77 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
-        setAnimationTriggered(true); // מפעיל את האנימציה
+        setAnimationTriggered(true);
         setTimeout(() => {
-          setAnimationTriggered(false); // מפסיק את האנימציה
-          setShowSuccessMessage(true); // מציג הודעת הצלחה
-        }, 3000); // זמן סיום האנימציה
-        setStatus('הנתונים נשלחו בהצלחה!');
+          setAnimationTriggered(false);
+          setShowSuccessMessage(true);
+        }, 3000);
       } else {
-        setStatus('שגיאה בשליחת הנתונים.');
+        console.error('Error submitting the form.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      setStatus('שגיאה בשליחת הנתונים.');
     }
   };
 
-  return (
-    <div className="contact-form">
-      {!animationTriggered && !showSuccessMessage && (
-        <>
-          <h2>השאר פרטים ונחזור אליך</h2>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="שם מלא"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="אימייל"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="טלפון"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="הודעה (לא חובה)"
-              value={formData.message}
-              onChange={handleChange}
-            />
-            <button type="submit" className="send-button">שלח</button>
-          </form>
-        </>
-      )}
+  if (animationTriggered) {
+    return <CryptoAnimation />;
+  }
 
-{animationTriggered && (
+  if (showSuccessMessage) {
+    return <SuccessMessage />;
+  }
+
+  return (
+    <div className="contact-form-container">
+      <div className="contact-form">
+        <form onSubmit={handleSubmit}>
+          <h2>השאר פרטים ונחזור אליך</h2>
+          <input
+            type="text"
+            name="name"
+            placeholder="שם מלא"
+            aria-label="שם מלא"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="אימייל"
+            aria-label="אימייל"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="טלפון"
+            aria-label="טלפון"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+          <textarea
+            id="message-input"
+            name="message"
+            placeholder="הודעה (לא חובה)"
+            aria-label="הודעה (לא חובה)"
+            value={formData.message}
+            onChange={handleChange}
+          ></textarea>
+          <button id="submit-button-contactformhomepage" type="submit" className="send-button">
+            שלח
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+const CryptoAnimation = () => (
   <div className="crypto-animation">
     {Array.from({ length: 15 }).map((_, index) => (
       <div
@@ -96,33 +108,26 @@ const ContactForm = () => {
         className="coin"
         style={{
           backgroundImage: `url(${[
-            "https://cryptologos.cc/logos/bitcoin-btc-logo.png",
-            "https://cryptologos.cc/logos/ethereum-eth-logo.png",
-            "https://cryptologos.cc/logos/xrp-xrp-logo.png",
-            "https://cryptologos.cc/logos/cardano-ada-logo.png",
-            "https://cryptologos.cc/logos/litecoin-ltc-logo.png",
-            "https://cryptologos.cc/logos/bitcoin-cash-bch-logo.png",
+            'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+            'https://cryptologos.cc/logos/ethereum-eth-logo.png',
+            'https://cryptologos.cc/logos/xrp-xrp-logo.png',
+            'https://cryptologos.cc/logos/cardano-ada-logo.png',
+            'https://cryptologos.cc/logos/litecoin-ltc-logo.png',
+            'https://cryptologos.cc/logos/bitcoin-cash-bch-logo.png',
           ][index % 6]})`,
-          left: `${Math.random() * 100}%`, // מיקום אופקי רנדומלי
-          animationDelay: `${Math.random() * 2}s`, // עיכוב רנדומלי לאנימציה
+          left: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 2}s`,
         }}
       ></div>
     ))}
   </div>
-)}
+);
 
-
-
-
-
-      {showSuccessMessage && (
-        <div className="success-message">
-          <h2>!הטופס נשלח בהצלחה</h2>
-          <p>.נציג יחזור אליך בהקדם</p>
-        </div>
-      )}
-    </div>
-  );
-};
+const SuccessMessage = () => (
+  <div className="success-message-contactform-homepage">
+    <h2>!הטופס נשלח בהצלחה</h2>
+    <p>.נציג יחזור אליך בהקדם</p>
+  </div>
+);
 
 export default ContactForm;

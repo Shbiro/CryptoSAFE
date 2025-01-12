@@ -11,7 +11,7 @@
 # העלה ל git
 #git status
 #git add .
-#git commit -m "update first login and tasks"
+#git commit -m "changes + whatsapp button"
 #git push
 
 # git pull https://amiratiashuri@gmail.com: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@github.com/Shbiro/CryptoSAFE.git

@@ -35,24 +35,10 @@
   }
 }
 
-/* === פריסה לדסקטופ === */
-.crypto-layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  gap: 200px; /* מרווח בין האלמנטים */
-  padding: 40px;
-  box-sizing: border-box;
-}
-
 
 
 /* ביטקוין גדול במרכז */
 .bitcoin-center {
-  margin-top: 20px;
   flex: 2;
   display: flex;
   justify-content: center;
@@ -96,87 +82,12 @@
   }
 }
 
-.crypto-prices-table table {
-  animation: fade-in 0.8s ease-in-out;
-}
 
 /* עיצוב מותאם ל-iPhone 12 Pro (390px x 844px) */
 @media screen and (max-width: 390px) {
-  .crypto-layout {
-    flex-direction: column; /* שינוי הפריסה לעמודה */
-    gap: 20px; /* הפחתת רווחים */
-    padding: 20px;
-  }
-
   .large-bitcoin {
     width: 300px; /* ביטקוין קטן יותר */
   }
-
-  .crypto-header h1 {
-    font-size: 1.8rem; /* כותרת קטנה יותר */
-  }
-
-  .crypto-header p {
-    font-size: 0.9rem; /* טקסט קטן יותר */
-  }
 }
 
-/* עיצוב מותאם ל-iPad (768px x 1024px) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .crypto-layout {
-    flex-direction: row; /* שמירה על פריסה אופקית */
-    gap: 80px; /* מרווחים קטנים יותר */
-    padding: 10px;
-  }
 
-  .large-bitcoin {
-    width: 300px; /* ביטקוין בגודל בינוני */
-    margin-left: 40px;
-  }
-
-  .crypto-header h1 {
-    font-size: 3.2rem; /* כותרת בגודל ביניים */
-  }
-}
-
-/* עיצוב מותאם ל-iPhone 13 Pro Max (430px x 932px) */
-@media screen and (max-width: 430px) {
-  .crypto-layout {
-    flex-direction: column; /* שינוי הפריסה לעמודה */
-    gap: 30px; /* הפחתת רווחים */
-    padding: 20px;
-  }
-
-  .large-bitcoin {
-    width: 350px; /* ביטקוין קטן יותר */
-  }
-
-  .crypto-header h1 {
-    font-size: 1.9rem; /* כותרת קטנה יותר */
-  }
-
-  .crypto-header p {
-    font-size: 1rem; /* טקסט קטן יותר */
-  }
-}
-
-/* עיצוב מותאם ל-Galaxy (360px x 800px) */
-@media screen and (max-width: 360px) {
-  .crypto-layout {
-    flex-direction: column;
-    gap: 15px; /* ריווח מינימלי */
-    padding: 15px;
-  }
-
-  .large-bitcoin {
-    width: 280px; /* ביטקוין קטן מאוד */
-  }
-
-  .crypto-header h1 {
-    font-size: 1.6rem; /* כותרת קטנה מאוד */
-  }
-
-  .crypto-header p {
-    font-size: 0.8rem; /* טקסט קטן */
-  }
-}

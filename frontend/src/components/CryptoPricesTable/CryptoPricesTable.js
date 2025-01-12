@@ -30,7 +30,7 @@ function CryptoPricesTable() {
   }
 
   return (
-    <div className="crypto-prices-table">
+    <div>
       <h2>Live Crypto Prices</h2>
       <table>
         <thead>

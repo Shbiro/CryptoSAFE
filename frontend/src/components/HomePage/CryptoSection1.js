@@ -1,7 +1,6 @@
 import React from 'react';
 import './CryptoSection1.css';
 import BitcoinImage from './Bitcoin1.png'; // ייבוא התמונה
-import CryptoPricesTable from '../CryptoPricesTable/CryptoPricesTable'; // ייבוא הטבלה
 
 function CryptoSection() {
   return (
@@ -25,9 +24,6 @@ function CryptoSection() {
             alt="Bitcoin"
             className="large-bitcoin"
           />
-        </div>
-        <div className="crypto-prices">
-          <CryptoPricesTable />
         </div>
       </div>
     </section>
