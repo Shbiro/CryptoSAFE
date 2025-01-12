@@ -10,6 +10,7 @@
   text-align: center;
   margin-bottom: 10px;
   box-sizing: border-box; /* כדי שה-padding לא ישפיע על הרוחב */
+  border-radius: 18px; /* פינות מעוגלות */
 }
 
 .crypto-header h1 {
@@ -85,6 +86,13 @@
 
 /* עיצוב מותאם ל-iPhone 12 Pro (390px x 844px) */
 @media screen and (max-width: 390px) {
+  .large-bitcoin {
+    width: 300px; /* ביטקוין קטן יותר */
+  }
+}
+
+/* עיצוב מותאם ל-iPhone 12 Pro (390px x 844px) */
+@media screen and (max-width: 428px) {
   .large-bitcoin {
     width: 300px; /* ביטקוין קטן יותר */
   }

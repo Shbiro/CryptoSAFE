@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f4f9; /* רקע עדין */
+  background-color: #ffffff; /* רקע עדין */
   color: #333; /* צבע טקסט */
   font-size: 16px; /* גודל טקסט בסיסי */
   line-height: 1.5;
@@ -19,10 +19,9 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  max-width: 1900px; /* מגבלת רוחב לטופס */
+  max-width: 1700px; /* מגבלת רוחב לטופס */
   width: 100%;
   background: #ffffff; /* רקע לבן */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* צל עדין */
   border-radius: 12px; /* פינות מעוגלות */
   box-sizing: border-box;
   text-align: center;
