@@ -11,18 +11,20 @@
 # העלה ל git
 #git status
 #git add .
-#git commit -m "change ip form and conatct and Update Readme"
+#git commit -m "update first login and tasks"
 #git push
 
 # git pull https://amiratiashuri@gmail.com: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@github.com/Shbiro/CryptoSAFE.git
 
 #ssh -i "AmirCs.pem" ubuntu@51.21.116.172
 
-#git clone https://Shbiro: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@github.com/Shbiro/CryptoSAFE.git
+#git remote set-url origin https://Shbiro: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@github.com/Shbiro/CryptoSAFE.git
 
 # עדכונים ב ssh לאחר עדכון ב git
 #cd ~/CryptoSAFE
+#git stash
 #git pull origin main
+#git stash pop
 #cd frontend
 # npm install
 # npm run build

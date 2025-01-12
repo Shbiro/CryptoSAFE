@@ -1,0 +1,27 @@
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px; /* מיקום מלמטה */
+    right: 20px; /* מיקום מימין */
+    background: #25d366;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .whatsapp-button:hover {
+    transform: scale(1.1); /* אפקט זום */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  .whatsapp-icon {
+    width: 30px;
+    height: 30px;
+  }
+  

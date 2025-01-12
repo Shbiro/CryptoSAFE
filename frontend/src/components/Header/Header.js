@@ -52,9 +52,6 @@ function Header() {
       </div>
         </ul>
       </nav>
-      <div className="cta desktop-only">
-        <button className="btn-signup">Sign Up</button>
-      </div>
     </header>
   );
 }

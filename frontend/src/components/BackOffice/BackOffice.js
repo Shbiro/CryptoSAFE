@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import './BackOffice.css';
 
@@ -11,6 +11,7 @@ function BackOffice() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError('');
     try {
       const response = await fetch('https://cryptosafe.co.il/api/login', {
         method: 'POST',
@@ -22,11 +23,10 @@ function BackOffice() {
 
       const data = await response.json();
 
-      if (data.success) {
+      if (response.ok) {
         setIsLoggedIn(true);
-        setError('');
       } else {
-        setError(data.message);
+        setError(data.message || 'Invalid credentials. Please try again.');
       }
     } catch (error) {
       console.error('Error during login:', error);
@@ -39,7 +39,6 @@ function BackOffice() {
       <div className="back-office">
         <h1>Welcome to Back Office</h1>
         <p>You are now logged in.</p>
-        {/* Add a button to navigate to Tasks */}
         <Link to="/bo/tasks">
           <button className="navigate-button">Go to Tasks</button>
         </Link>
@@ -48,16 +47,18 @@ function BackOffice() {
   }
 
   return (
-    <div className="login-form">
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
+    <div className="back-office">
+      <form onSubmit={handleLogin} className="login-form">
+        <h2>Login</h2>
         <input
+          id="username-input"
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         <input
+          id="password-input"
           type="password"
           placeholder="Password"
           value={password}

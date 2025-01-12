@@ -6,6 +6,7 @@ import CryptoSection2 from './CryptoSection2'; // ייבוא הקומפוננט�
 import PricingSection from './PricingSection';
 import AboutSection  from './AboutSection';
 import ContactForm   from './ContactForm';
+import WhatsAppButton from '../WhatsAppButton/WhatsAppButton';
 
 function HomePage() {
   return (
@@ -17,6 +18,7 @@ function HomePage() {
         <PricingSection />
         <AboutSection />
         <ContactForm />
+        <WhatsAppButton />
       </main>
     </div>
   );

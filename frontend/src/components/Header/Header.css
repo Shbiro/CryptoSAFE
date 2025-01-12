@@ -1,19 +1,20 @@
+/* עיצוב ראשי להדר */
 .header {
-    width: 50%; /* הגדרת אורך ל-50% */
-    height: 50px;
-    background: linear-gradient(90deg, #f4c10f, #f4c10f, #f4c10f);
-    color: white;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0; /* ה-header מוצמד לימין */
-    z-index: 1000;
-    padding: 0 20px; /* ריווח פנימי */
-    border-top-right-radius: 25px; /* פינה מעוגלת בצד שמאל למעלה */
-    border-bottom-right-radius: 25px; /* פינה מעוגלת בצד שמאל למטה */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* צל עדין */
-  }
+  width: 50%; /* עבור דסקטופ */
+  height: 50px;
+  background: linear-gradient(90deg, #f4c10f, #f4c10f);
+  color: white;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0 20px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
   
   /* מיכל הקונטיינר */
   .container {
@@ -69,8 +70,8 @@
   .nav ul li a {
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 500;
-    color: #36352e; /* גוון כהה */
+    font-weight: 600;
+    color: #ffffff; /* גוון כהה */
     padding: 10px 20px; /* ריווח פנימי אחיד */
     transition: color 0.3s ease, background-color 0.3s ease;
     border-radius: 5px; /* פינות מעוגלות */
@@ -81,73 +82,63 @@
     background-color: #f4c10f; /* רקע זהב */
   }
   
-  /* Dropdown Menu */
-  .nav ul li .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 110%;
-    right: 0; /* מותאם ל-RTL */
-    background: linear-gradient(120deg, #f7fafc, #edf1f5); /* רקע עדין */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px; /* פינות מעוגלות */
-    padding: 10px 0;
-    list-style: none;
-    z-index: 1000;
-    min-width: 160px; /* רוחב מינימלי */
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .nav ul li .dropdown-menu li {
-    padding: 10px 15px;
-    text-align: right; /* יישור לימין */
-  }
-  
-  .nav ul li .dropdown-menu li a {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #36352e;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .nav ul li .dropdown-menu li a:hover {
-    color: #ffffff;
-    background: #f4c10f; /* רקע זהב */
-    border-radius: 5px;
-    transform: scale(1.05); /* אפקט קל */
-  }
-  
-  /* אפקט על הצגת תפריט נפתח */
-  .nav ul li:hover .dropdown-menu {
-    display: block;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  
-  .btn-signup {
-    padding: 8px 16px; /* ריווח פנימי קטן יותר */
-    font-size: 15px; /* גודל קטן */
-    font-weight: 700;
-    color: #ffffff;
-    background: linear-gradient(45deg, #f4c10f, #ffffff); /* מעבר צבעים זהוב */
-    border: none;
-    border-radius: 20px; /* פינות מעוגלות */
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .btn-signup:hover {
-    transform: scale(1.05); /* אפקט קל */
-    background: linear-gradient(45deg, #ffffff, #f4c10f); /* מעבר צבעים הפוך */
-  }
-  
-/* כפתור הרשמה יופיע רק בדסקטופ */
-.desktop-only {
-    display: none;
-  }
+/* === עיצוב כללי ל-Dropdown === */
+.nav ul li .dropdown-menu {
+  display: none; /* מוסתר כברירת מחדל */
+  position: absolute;
+  top: 100%;
+  right: 0; /* מתאים ל-RTL */
+  background: linear-gradient(120deg, #f7fafc, #edf1f5); /* רקע עדין */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px; /* פינות מעוגלות */
+  padding: 10px 0;
+  list-style: none;
+  z-index: 1000;
+  min-width: 160px; /* רוחב מינימלי */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* === פריטים בתוך ה-Dropdown === */
+.nav ul li .dropdown-menu li {
+  padding: 10px 15px;
+  text-align: right; /* יישור לימין */
+  border-radius: 5px; /* פינות מעוגלות */
+}
+
+.nav ul li .dropdown-menu li a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #36352e;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+  border-radius: 5px; /* פינות מעוגלות */
+}
+
+.nav ul li .dropdown-menu li a:hover {
+  color: #ffffff;
+  background: #f4c10f; /* רקע זהב */
+  transform: scale(1.05); /* אפקט קל */
+}
+
+/* === הצגת ה-Dropdown בה-hover === */
+.nav ul li:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  border-radius: 2px; /* פינות מעוגלות */
+}
+
+
+
+/* === הצגת ה-Dropdown בה-hover === */
+.nav ul li:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  border-radius: 2px; /* פינות מעוגלות */
+}
   
 /* כפתור תפריט יופיע רק במובייל */
 @media screen and (min-width: 769px) {
@@ -171,7 +162,7 @@
 /* תפריט במצב סגור */
 .nav {
     position: fixed;
-    top: 0;
+    top: 10px;
     right: -100%; /* מחוץ למסך בצד ימין */
     height: 70vh; /* גובה 50% של המסך */
     width: 200px; /* רוחב */
@@ -227,7 +218,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 50px;
     width: 100%;
   }
   
@@ -249,36 +240,9 @@
     margin-bottom: 0; /* מבטיח שלפריט האחרון לא יהיה רווח מיותר */
   }
   .nav ul li a:hover {
-    background: linear-gradient(135deg, #00e6e6, #f7ffff); /* צבע נאון */
+    background: linear-gradient(135deg, #f4c10f, #ff5722); /* צבע נאון */
     color: #ffffff;
-    box-shadow: 0 5px 15px rgba(0, 230, 230, 0.5);
     transform: translateX(10px); /* זז ימינה */
-  }
-  
-  /* תפריט דרופדאון */
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    padding: 10px 0;
-  }
-  
-  .nav ul li:hover .dropdown-menu {
-    display: block;
-  }
-  
-  .dropdown-menu li a {
-    font-size: 16px;
-    padding: 10px 15px;
-    display: block;
-    transition: all 0.3s ease-in-out;
-  }
-  .dropdown-menu li a:hover {
-    background: #00e6e6;
-    color: #121212;
   }
   
   /* אנימציה לפתיחה */
@@ -314,3 +278,112 @@
       }
   }
   
+  .menu-toggle {
+    display: none; /* מוסתר כברירת מחדל */
+  }
+
+/* עיצוב עבור iPhone 12 Pro (390px x 844px) */
+@media screen and (max-width: 390px) {
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 5px;
+    right: -140px;
+    font-size: 18px;
+    color: #ffffff;
+    background: #f4c10f;
+    padding: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .header {
+    width: 50%;
+    height: 60px;
+  }
+  .nav ul li .dropdown-menu {
+    right: -20px; /* קרוב יותר לימין */
+    min-width: 240px; /* צר יותר */
+    top: 20;
+    padding: 30px 0px; /* הפחתת ריווח פנימי */
+    background: linear-gradient(120deg, #f4c10f, #ffffff); /* רקע עדין */
+  }
+
+  .nav ul li .dropdown-menu li a {
+    padding: 8px 20px; /* ריווח קטן יותר */
+  }
+  
+}
+
+
+/* עיצוב עבור iPhone 13 Pro Max (430px x 932px) */
+@media screen and (min-width: 428px) and (max-width: 926px) {
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 6px;
+    right: -180px;
+    font-size: 18px;
+    color: #ffffff;
+    background: #f4c10f;
+    padding: -10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .header {
+    width: 40%;
+    height: 60px;
+    padding: 0 30px;
+  }
+  .nav ul li .dropdown-menu {
+    right: -20px; /* קרוב יותר לימין */
+    min-width: 240px; /* צר יותר */
+    top: 20;
+    padding: 30px 0px; /* הפחתת ריווח פנימי */
+    background: linear-gradient(120deg, #f4c10f, #ffffff); /* רקע עדין */
+  }
+
+  .nav ul li .dropdown-menu li a {
+    padding: 8px 20px; /* ריווח קטן יותר */
+  }
+}
+
+/* עיצוב עבור iPad (768px x 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 8px;
+    right: -380px;
+    font-size: 24px;
+    color: #ffffff;
+    background: #f4c10f;
+    padding: 0px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .header {
+    width: 40%;
+    height: 60px;
+    padding: 0 30px;
+  }
+  
+}
+
+
+/* עיצוב כללי לטווח גדול יותר (900px - 1440px) */
+@media screen and (min-width: 900px) and (max-width: 1440px) {
+  .menu-toggle {
+    display: none; /* מוסתר בדסקטופ */
+  }
+
+  .header {
+    width: 80%; /* מתאים לדסקטופ רחב */
+    height: 50px;
+  }
+}
