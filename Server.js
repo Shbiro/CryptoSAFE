@@ -130,6 +130,45 @@ app.get('/api/tasks', async (req, res) => {
   }
 });
 
+app.post('/api/privatetasks', async (req, res) => {
+  const { taskName, description, status } = req.body;
+
+  try {
+    await base(process.env.AIRTABLE_TABLE_NAME_PRIVATE_TASKS).create([
+      {
+        fields: {
+          TaskName: taskName || '', // שם המשימה
+          Description: description || '', // תיאור
+          Status: status || 'Not Started', // סטטוס (ברירת מחדל: Not Started)
+        },
+      },
+    ]);
+    res.status(200).json({ success: true, message: 'Private task successfully added to Airtable' });
+  } catch (error) {
+    console.error('Error adding private task to Airtable:', error);
+    res.status(500).json({ success: false, error: 'Failed to add private task to Airtable' });
+  }
+});
+
+app.get('/api/privatetasks', async (req, res) => {
+  try {
+    const records = await base(process.env.AIRTABLE_TABLE_NAME_PRIVATE_TASKS).select().all();
+
+    const tasks = records.map((record) => ({
+      id: record.id,
+      taskName: record.fields.TaskName || '',
+      description: record.fields.Description || '',
+      status: record.fields.Status || '',
+    }));
+
+    res.status(200).json(tasks);
+  } catch (error) {
+    console.error('Error fetching private tasks from Airtable:', error);
+    res.status(500).json({ error: 'Failed to fetch private tasks from Airtable' });
+  }
+});
+
+
 
 // Catch-all route to serve React frontend
 app.get('*', (req, res) => {

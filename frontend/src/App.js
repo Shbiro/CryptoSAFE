@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from './components/HomePage/HomePage';
 import BackOffice from './components/BackOffice/BackOffice';
 import Tasks from './components/Tasks/Tasks';
+import PrivateTasks from './components/Tasks/PrivateTasks';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 
@@ -20,6 +21,14 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Tasks />
+                </ProtectedRoute>
+              }
+            />
+                        <Route
+              path="/bo/privatetasks"
+              element={
+                <ProtectedRoute>
+                  <PrivateTasks />
                 </ProtectedRoute>
               }
             />

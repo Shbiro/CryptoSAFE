@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.d6082793.css",
-    "main.js": "/static/js/main.6bb52fa0.js",
+    "main.js": "/static/js/main.b9e58faa.js",
     "static/js/488.e75445ad.chunk.js": "/static/js/488.e75445ad.chunk.js",
     "static/media/Bitcoin1.png": "/static/media/Bitcoin1.a7e56cb30fb1860e0a59.png",
     "index.html": "/index.html",
     "main.d6082793.css.map": "/static/css/main.d6082793.css.map",
-    "main.6bb52fa0.js.map": "/static/js/main.6bb52fa0.js.map",
+    "main.b9e58faa.js.map": "/static/js/main.b9e58faa.js.map",
     "488.e75445ad.chunk.js.map": "/static/js/488.e75445ad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d6082793.css",
-    "static/js/main.6bb52fa0.js"
+    "static/js/main.b9e58faa.js"
   ]
 }

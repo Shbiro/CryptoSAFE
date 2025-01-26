@@ -42,6 +42,9 @@ function BackOffice() {
         <Link to="/bo/tasks">
           <button className="navigate-button">Go to Tasks</button>
         </Link>
+        <Link to="/bo/privatetasks">
+          <button className="navigate-button">Go to Private Tasks</button>
+        </Link>
       </div>
     );
   }
