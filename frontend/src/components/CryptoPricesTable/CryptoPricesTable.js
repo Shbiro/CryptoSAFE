@@ -31,7 +31,6 @@ function CryptoPricesTable() {
 
   return (
     <div>
-      <h2>Live Crypto Prices</h2>
       <table>
         <thead>
           <tr>

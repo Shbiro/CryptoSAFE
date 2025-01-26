@@ -36,7 +36,7 @@ function PrivateTasksForm() {
   return (
     <div className="private-tasks-form">
       <form onSubmit={handleSubmit}>
-      <h1>הוסף משימה חדשה</h1>
+      <h2>הוסף משימה חדשה</h2>
         <input
           type="text"
           placeholder="Task Name"

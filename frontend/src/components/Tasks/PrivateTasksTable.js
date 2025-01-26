@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 function PrivateTasksTable() {
   const [tasks, setTasks] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -34,10 +33,6 @@ function PrivateTasksTable() {
     return () => clearInterval(intervalId);
   }, []);
 
-  if (loading && tasks.length === 0) {
-    return <div className="loading">Loading...</div>;
-  }
-
   if (error) {
     return <div className="error">{error}</div>;
   }
@@ -48,18 +43,18 @@ function PrivateTasksTable() {
       <table>
         <thead>
           <tr>
-            <th>Task Name</th>
-            <th>Description</th>
-            <th>Status</th>
+            <th>סטטוס</th>
+            <th>תיאור</th>
+            <th>שם המשימה</th>
           </tr>
         </thead>
         <tbody>
           {tasks.length > 0 ? (
             tasks.map((task) => (
               <tr key={task.id}>
-                <td>{task.taskName}</td>
-                <td>{task.description}</td>
                 <td>{task.status}</td>
+                <td>{task.description}</td>
+                <td>{task.taskName}</td>
               </tr>
             ))
           ) : (

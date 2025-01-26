@@ -187,3 +187,97 @@ td:first-child {
 table {
   animation: fadeIn 0.8s ease-in-out;
 }
+
+@media (max-width: 768px) {
+  .App {
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+
+  form {
+    padding: 1rem;
+    max-width: 300px; /* הקטנת רוחב הטופס */
+  }
+
+  form input,
+  form textarea,
+  form select {
+    padding: 10px;
+    font-size: 0.9rem; /* הקטנת טקסט בשדות */
+  }
+
+  form button {
+    padding: 10px;
+    font-size: 1rem; /* הקטנת כפתור */
+  }
+
+  table {
+    font-size: 14px; /* הקטנת גודל הטקסט בטבלה */
+    width: 80%;
+    margin-left: 35px;
+  }
+
+  th,
+  td {
+    padding: 10px; /* הקטנת ריווח בטבלה */
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    padding: 0.8rem;
+    max-width: 280px; /* התאמה למסכים קטנים מאוד */
+  }
+
+  form input,
+  form textarea,
+  form select {
+    padding: 8px;
+    font-size: 0.8rem; /* הקטנת טקסט נוספת */
+  }
+
+  form button {
+    padding: 8px;
+    font-size: 0.9rem; /* התאמת גודל הכפתור */
+  }
+
+  table {
+    font-size: 12px; /* גודל טקסט קטן יותר בטבלה */
+  }
+
+  th,
+  td {
+    padding: 8px; /* צמצום ריווח בין התאים */
+  }
+
+  th {
+    font-size: 14px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+}
+
+h2 {
+  font-family: 'Inter', sans-serif; /* גופן מודרני */
+  font-size: 1rem; /* גודל טקסט */
+  font-weight: 700; /* עובי טקסט */
+  color: #ffffff; /* צבע כחול */
+  text-transform: uppercase; /* אותיות גדולות */
+  letter-spacing: 2px; /* ריווח בין אותיות */
+  text-align: center; /* מרכז את הכותרת */
+  margin: 20px 0; /* ריווח עליון ותחתון */
+  position: relative; /* לעיצוב מתקדם */
+}
+
+/* קו תחתון דקורטיבי */
+h2::after {
+  content: '';
+  display: block;
+  width: 60%; /* רוחב הקו */
+  height: 4px; /* גובה הקו */
+  background: linear-gradient(90deg, #007bff, #00d4ff); /* גרדיאנט צבעים */
+  margin: 10px auto 0; /* מרכז את הקו */
+  border-radius: 2px; /* פינות מעוגלות */
+}
