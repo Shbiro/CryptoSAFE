@@ -15,7 +15,7 @@ const CryptoSection2 = () => {
     },
     {
       title: "תמיכה מסביב לשעון",
-      description: "שירות לקוחות זמין 24/7 כדי שתמיד תרגיש בטוח.",
+      description: "שירות לקוחות זמין 24/6 כדי שתמיד תרגיש בטוח.",
       icon: "📞",
     },
     {
@@ -28,6 +28,11 @@ const CryptoSection2 = () => {
       description: "תמיכה ברכישת נכסים גדולים כמו רכבים ונדל\"ן באמצעות קריפטו.",
       icon: "🏠",
     },
+    {
+      title: "בדיקת שטרות מזויפים",
+      description: "שירות מתקדם לזיהוי שטרות מזויפים כדי להבטיח עסקאות בטוחות ואמינות.",
+      icon: "💵",
+    }
   ];
 
   return (

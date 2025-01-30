@@ -7,6 +7,7 @@
     direction: ltr; /* כיוון הטקסט משמאל לימין */
     margin-bottom: 10px;
     box-sizing: border-box; /* כדי שה-padding לא ישפיע על הרוחב */
+    border-radius: 18px;
   }
   
   .about-title {
