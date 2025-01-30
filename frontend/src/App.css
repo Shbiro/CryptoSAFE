@@ -223,6 +223,97 @@ table {
   }
 }
 
+/* כפתור עריכה */
+.btn-edit {
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 12px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 4px 12px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+  }
+/* כפתור מחיקה */
+.btn-delete {
+  background: #D32F2F;
+  border-radius: 999px;
+  box-shadow: #F44336 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 12px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 4px 12px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+.cryptosafebutton{
+
+    background-color: #3DD1E7;
+    border: 0 solid #E5E7EB;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.15rem;
+    padding: .55rem 1.15rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none #000000 solid;
+    text-decoration-thickness: auto;
+    width: 60%;
+    max-width: 460px;
+    position: relative;
+    cursor: pointer;
+    transform: rotate(-2deg);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-left: 50px;
+    top: -6px;
+  }
+  
+  .cryptosafebutton:focus {
+    outline: 0;
+  }
+  
+  .cryptosafebutton:after {
+    content: '';
+    position: absolute;
+    border: 1px solid #000000;
+    bottom: 4px;
+    left: 4px;
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+  }
+  
+  .cryptosafebutton:hover:after {
+    bottom: 2px;
+    left: 2px;
+  }
+
 @media (max-width: 480px) {
   form {
     padding: 0.8rem;
@@ -281,3 +372,5 @@ h2::after {
   margin: 10px auto 0; /* מרכז את הקו */
   border-radius: 2px; /* פינות מעוגלות */
 }
+
+

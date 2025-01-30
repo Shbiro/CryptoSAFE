@@ -35,15 +35,21 @@ function BackOffice() {
   };
 
   if (isLoggedIn) {
+    const goToCryptoSafe = () => {
+      window.open('https://cryptosafe.co.il', '_blank', 'noopener,noreferrer');
+    };
     return (
       <div className="back-office">
         <h1>Welcome to Back Office</h1>
         <p>You are now logged in.</p>
+        <button className='cryptosafebutton' onClick={goToCryptoSafe}>
+        🌐 Visit CryptoSafe
+      </button>
         <Link to="/bo/tasks">
-          <button className="navigate-button">Go to Tasks</button>
+          <button className="cryptosafebutton">Go to Tasks</button>
         </Link>
         <Link to="/bo/privatetasks">
-          <button className="navigate-button">Go to Private Tasks</button>
+          <button className="cryptosafebutton">Go to Private Tasks</button>
         </Link>
       </div>
     );

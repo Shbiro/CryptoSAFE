@@ -169,6 +169,88 @@ app.get('/api/privatetasks', async (req, res) => {
   }
 });
 
+app.put('/api/privatetasks/update', async (req, res) => {
+  const { id, taskName, description, status } = req.body;
+
+  try {
+    await base(process.env.AIRTABLE_TABLE_NAME_PRIVATE_TASKS).update([
+      {
+        id,
+        fields: {
+          TaskName: taskName || '',
+          Description: description || '',
+          Status: status || '',
+        },
+      },
+    ]);
+
+    res.status(200).json({ success: true, message: 'Task successfully updated' });
+  } catch (error) {
+    console.error('Error updating task in Airtable:', error);
+    res.status(500).json({ success: false, error: 'Failed to update task in Airtable' });
+  }
+});
+
+app.delete('/api/privatetasks/delete/:id', async (req, res) => {
+  const { id } = req.params;
+  console.log(`Checking if task ${id} exists before deletion`);
+
+  try {
+    const record = await base(process.env.AIRTABLE_TABLE_NAME_PRIVATE_TASKS).find(id);
+    if (!record) {
+      return res.status(404).json({ success: false, error: 'Task not found' });
+    }
+
+    await base(process.env.AIRTABLE_TABLE_NAME_PRIVATE_TASKS).destroy(id);
+    console.log(`Task ${id} deleted successfully`);
+    res.status(200).json({ success: true, message: 'Task successfully deleted' });
+  } catch (error) {
+    console.error('Error deleting task in Airtable:', error);
+    res.status(500).json({ success: false, error: 'Failed to delete task in Airtable' });
+  }
+});
+
+app.put('/api/tasks/update', async (req, res) => {
+  const { id, taskName, description, status } = req.body;
+
+  try {
+    await base(process.env.AIRTABLE_TABLE_NAME_TASKS).update([
+      {
+        id,
+        fields: {
+          TaskName: taskName || '',
+          Description: description || '',
+          Status: status || '',
+        },
+      },
+    ]);
+
+    res.status(200).json({ success: true, message: 'Task successfully updated' });
+  } catch (error) {
+    console.error('Error updating task in Airtable:', error);
+    res.status(500).json({ success: false, error: 'Failed to update task in Airtable' });
+  }
+});
+
+app.delete('/api/tasks/delete/:id', async (req, res) => {
+  const { id } = req.params;
+  console.log(`Checking if task ${id} exists before deletion`);
+
+  try {
+    const record = await base(process.env.AIRTABLE_TABLE_NAME_TASKS).find(id);
+    if (!record) {
+      return res.status(404).json({ success: false, error: 'Task not found' });
+    }
+
+    await base(process.env.AIRTABLE_TABLE_NAME_TASKS).destroy(id);
+    console.log(`Task ${id} deleted successfully`);
+    res.status(200).json({ success: true, message: 'Task successfully deleted' });
+  } catch (error) {
+    console.error('Error deleting task in Airtable:', error);
+    res.status(500).json({ success: false, error: 'Failed to delete task in Airtable' });
+  }
+});
+
 
 
 // Catch-all route to serve React frontend
