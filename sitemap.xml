@@ -20,4 +20,17 @@
         <loc>https://cryptosafe.co.il/blogs/howkeepsafeyourmoney</loc>
         <priority>0.8</priority>
     </url>
+
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/HowBitcoinWork</loc> 
+        <lastmod>2025-02-02</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/HowToChooseWallet</loc> 
+        <lastmod>2025-02-02</lastmod>
+        <priority>0.7</priority>
+    </url>
 </urlset>

@@ -1,3 +1,4 @@
+import HowBitcoinWork from './Pages/HowBitcoinWork.js';
 import HowKeepSafeYourMoney from './Pages/HowKeepSafeYourMoney.js';
 import ETHCONTARCTS from './Pages/ETHCONTARCTS.js';
 import WhatisBitcoin from './Pages/WhatisBitcoin.js';
@@ -5,8 +6,26 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // ✅ הוספת קישורי ניווט
 import BlogCard from './BlogCard';
 import styles from './Blogs.module.css'; // CSS Modules
+import HowToChoseWallet from './Pages/HowToChoseWallet.js';
 
 const articles = [
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: "\"איך לבחור ארנק קריפטו מאובטח? המדריך המלא לארנקים דיגיטליים\"",
+      description: "מחפש את הדרך הבטוחה לשמור על הביטקוין שלך? במדריך הזה תגלה אילו סוגי ארנקים קיימים, כיצד להגן על הקריפטו שלך ולמה \"ארנק קר\" עדיף מ\"ארנק חם\".\n\n",
+      image: "https://images.pexels.com/photos/3631991/pexels-photo-3631991.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/howtochosewallet" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
+
+      {
+          id: Math.floor(Math.random() * 10000),
+          title: "איך ביטקוין עובד? – מדריך טכני על בלוקצ'יין ומנגנון הכרייה",
+          description: "למד כיצד ביטקוין פועל, מהו בלוקצ'יין, איך עובדת כריית ביטקוין ולמה הוא כל כך מהפכני. מדריך טכני ומפורט על הליבה של ביטקוין.",
+          image: "https://images.pexels.com/photos/730564/pexels-photo-730564.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          link: "/blogs/howbitcoinwork" // ✅ קישור אוטומטי לעמוד הבלוג
+      },
+
 
       {
           id: Math.floor(Math.random() * 10000),

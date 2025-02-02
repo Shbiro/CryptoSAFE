@@ -381,6 +381,7 @@ app.delete('/api/blogs/:id', async (req, res) => {
 });
 
 const saveBlogComponent = (fileName, title, url, seoTitle, seoDescription, image, content, published, tags, author, category, views, likes) => {
+ 
   if (!fileName) {
       console.error("❌ Missing file name, skipping file creation.");
       return;
@@ -396,6 +397,17 @@ const saveBlogComponent = (fileName, title, url, seoTitle, seoDescription, image
       console.log(`📁 Directory created: ${saveDirectory}`);
   }
 
+  // ✅ המרת תוכן JSON לפורמט בטוח בקובץ React
+  const safeTitle = JSON.stringify(title);
+  const safeUrl = JSON.stringify(url);
+  const safeSeoTitle = JSON.stringify(seoTitle);
+  const safeSeoDescription = JSON.stringify(seoDescription);
+  const safeImage = JSON.stringify(image);
+  const safeContent = JSON.stringify(content);
+  const safeTags = JSON.stringify(tags);
+  const safeAuthor = JSON.stringify(author);
+  const safeCategory = JSON.stringify(category);
+
   // ✅ יצירת תוכן הקובץ בפורמט של קומפוננטת React
   const fileContent = `
 import React from 'react';
@@ -404,15 +416,15 @@ import BlogTemplate from '../BlogTemplate';
 const ${fileName} = () => {
   return (
       <BlogTemplate 
-          title="${title}"
-          url="${url}"
-          seoTitle="${seoTitle}"
-          seoDescription="${seoDescription}"
-          image="${image}"
-          content={\`${content}\`}
-          tags={${JSON.stringify(tags)}}
-          author="${author}"
-          category="${category}"
+          title={${safeTitle}}
+          url={${safeUrl}}
+          seoTitle={${safeSeoTitle}}
+          seoDescription={${safeSeoDescription}}
+          image={${safeImage}}
+          content={${safeContent}}
+          tags={${safeTags}}
+          author={${safeAuthor}}
+          category={${safeCategory}}
           views={${views}}
           likes={${likes}}
       />
@@ -423,14 +435,14 @@ export default ${fileName};
 `;
 
   // ✅ כתיבת הקובץ בפורמט JS
-  fs.writeFile(savePath, fileContent, (err) => {
-      if (err) {
-          console.error(`❌ Error saving blog file: ${err.message}`);
-      } else {
-          console.log(`✅ Blog component saved successfully at: ${savePath}`);
-      }
-  });
+  try {
+      fs.writeFileSync(savePath, fileContent, 'utf8');
+      console.log(`✅ Blog component saved successfully at: ${savePath}`);
+  } catch (error) {
+      console.error(`❌ Error saving blog file: ${error.message}`);
+  }
 };
+
 
 const updateAppRoutes = (fileName) => {
   const appPath = path.join(process.cwd(), 'frontend/src/App.js');
@@ -470,39 +482,51 @@ const updateAppRoutes = (fileName) => {
 const updateBlogGallery = (fileName, title, seoDescription, image) => {
   const galleryPath = path.join(process.cwd(), 'frontend/src/components/Blogs/BlogGallery.js');
 
-  // ✅ טוען את הקובץ של `BlogGallery.js`
+  // ✅ קריאת קובץ `BlogGallery.js`
   let galleryContent = fs.readFileSync(galleryPath, 'utf8');
 
   // ✅ בדיקה אם המאמר כבר קיים
-  if (!galleryContent.includes(`./Pages/${fileName}`)) {
-      console.log(`📝 Updating BlogGallery.js with new blog: ${fileName}`);
-
-      // ✅ יצירת שורת `import` חדשה (בתחילת הקובץ)
-      const importStatement = `import ${fileName} from './Pages/${fileName}.js';\n`;
-      galleryContent = importStatement + galleryContent;
-
-      // ✅ חיפוש מערך `articles`
-      const articlesStart = galleryContent.indexOf('const articles = [') + 18;
-
-      // ✅ יצירת אובייקט חדש לרשימת המאמרים
-      const newArticle = `
-      {
-          id: Math.floor(Math.random() * 10000),
-          title: "${title}",
-          description: "${seoDescription}",
-          image: "${image}",
-          link: "/blogs/${fileName.toLowerCase()}" // ✅ קישור אוטומטי לעמוד הבלוג
-      },`;
-
-      // ✅ הוספת המאמר החדש למערך `articles`
-      galleryContent = galleryContent.slice(0, articlesStart) + `\n${newArticle}` + galleryContent.slice(articlesStart);
-
-      // ✅ שמירת העדכון ל-`BlogGallery.js`
-      fs.writeFileSync(galleryPath, galleryContent, 'utf8');
-      console.log(`✅ BlogGallery.js updated with new article: ${fileName}`);
+  if (galleryContent.includes(`./Pages/${fileName}`)) {
+      console.log(`🔹 Blog ${fileName} already exists in BlogGallery.js.`);
+      return;
   }
-};
 
+  console.log(`📝 Updating BlogGallery.js with new blog: ${fileName}`);
+
+  // ✅ יצירת import בצורה מסודרת
+  const importStatement = `import ${fileName} from './Pages/${fileName}.js';\n`;
+
+  // ✅ חיפוש המקום שבו נגמרים כל ה-importים
+  const importEndIndex = galleryContent.lastIndexOf("import");
+  const nextLineIndex = galleryContent.indexOf("\n", importEndIndex) + 1;
+  galleryContent = galleryContent.slice(0, nextLineIndex) + importStatement + galleryContent.slice(nextLineIndex);
+
+  // ✅ חיפוש מערך `articles`
+  const articlesStart = galleryContent.indexOf('const articles = [') + 18;
+
+  // ✅ המרת התוכן כדי למנוע שגיאות בגרשיים
+  const safeTitle = JSON.stringify(title);
+  const safeDescription = JSON.stringify(seoDescription);
+  const safeImage = JSON.stringify(image);
+  const safeLink = JSON.stringify(`/blogs/${fileName.toLowerCase()}`);
+
+  // ✅ יצירת אובייקט חדש לרשימת המאמרים
+  const newArticle = `
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: ${safeTitle},
+      description: ${safeDescription},
+      image: ${safeImage},
+      link: ${safeLink} // ✅ קישור אוטומטי לעמוד הבלוג
+  },`;
+
+  // ✅ הוספת המאמר החדש למערך `articles`
+  galleryContent = galleryContent.slice(0, articlesStart) + `\n${newArticle}` + galleryContent.slice(articlesStart);
+
+  // ✅ שמירת העדכון ל- `BlogGallery.js`
+  fs.writeFileSync(galleryPath, galleryContent, 'utf8');
+  console.log(`✅ BlogGallery.js updated with new article: ${fileName}`);
+};
 
 const SITEMAP_PATH = path.join(__dirname, 'sitemap.xml');
 
