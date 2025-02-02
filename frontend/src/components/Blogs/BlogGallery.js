@@ -7,8 +7,17 @@ import { Link } from 'react-router-dom'; // ✅ הוספת קישורי ניוו
 import BlogCard from './BlogCard';
 import styles from './Blogs.module.css'; // CSS Modules
 import HowToChoseWallet from './Pages/HowToChoseWallet.js';
+import AmIBeingScammed from './Pages/AmIBeingScammed.js';
 
 const articles = [
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: "איך לזהות תרמית קריפטו ולהימנע מהונאות בעולם הדיגיטלי?",
+      description: "🚨 \"גלה איך לזהות תרמיות קריפטו ולהגן על ההשקעות שלך! מדריך מקיף על סוגי ההונאות, הסימנים המחשידים, והדרכים הטובות ביותר לשמור על הביטקוין והנכסים הדיגיטליים שלך בטוחים.\"",
+      image: "https://images.pexels.com/photos/7111619/pexels-photo-7111619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/amibeingscammed" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
 
   {
       id: Math.floor(Math.random() * 10000),

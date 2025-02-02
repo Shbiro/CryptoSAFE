@@ -14,6 +14,7 @@ import ETHCONTARCTS from './components/Blogs/Pages/ETHCONTARCTS.js';
 import HowKeepSafeYourMoney from './components/Blogs/Pages/HowKeepSafeYourMoney.js';
 import HowBitcoinWork from './components/Blogs/Pages/HowBitcoinWork.js';
 import HowToChoseWallet from './components/Blogs/Pages/HowToChoseWallet.js';
+import AmIBeingScammed from './components/Blogs/Pages/AmIBeingScammed.js';
 function App() {
   return (
     <AuthProvider>
@@ -26,6 +27,7 @@ function App() {
             <Route path="/blogs/howkeepsafeyourmoney" element={<HowKeepSafeYourMoney />} />
             <Route path="/blogs/howbitcoinwork" element={<HowBitcoinWork />} />
             <Route path="/blogs/howtochoosewallet" element={<HowToChoseWallet />} />
+            <Route path="/blogs/amibeingscammed" element={<AmIBeingScammed />} />
 <Route path="/blogs" element={<Blogs />} />
             <Route path="/bo" element={<BackOffice />} />
             <Route
