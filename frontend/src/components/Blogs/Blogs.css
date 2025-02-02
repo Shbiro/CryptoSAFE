@@ -1,0 +1,23 @@
+.Blogs{
+    margin-top: 50px;
+}
+
+/* ✅ עיצוב לתמונה ראשית של הבלוג */
+.blog-image-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.blog-header-image {
+    width: 100%; /* תמונה רספונסיבית */
+    max-width: 600px; /* הגבלת הרוחב המקסימלי */
+    height: auto; /* שמירה על יחס תמונה תקין */
+    border-radius: 10px; /* פינות מעוגלות */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* הוספת אפקט עומק */
+    transition: transform 0.3s ease-in-out; /* אנימציה עדינה */
+}
+
+/* ✅ אפקט קליק hover */
+.blog-header-image:hover {
+    transform: scale(1.02);
+}

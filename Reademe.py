@@ -11,7 +11,7 @@
 # העלה ל git
 #git status
 #git add .
-#git commit -m "add buttons and tables changes"
+#git commit -m "color change about radius and fake money"
 #git push
 
 # git pull https://amiratiashuri@gmail.com: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@github.com/Shbiro/CryptoSAFE.git

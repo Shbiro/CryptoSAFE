@@ -38,18 +38,22 @@ function BackOffice() {
     const goToCryptoSafe = () => {
       window.open('https://cryptosafe.co.il', '_blank', 'noopener,noreferrer');
     };
+
     return (
       <div className="back-office">
         <h1>Welcome to Back Office</h1>
         <p>You are now logged in.</p>
-        <button className='cryptosafebutton' onClick={goToCryptoSafe}>
-        🌐 Visit CryptoSafe
-      </button>
+        <button className="cryptosafebutton" onClick={goToCryptoSafe}>
+          🌐 Visit CryptoSafe
+        </button>
         <Link to="/bo/tasks">
           <button className="cryptosafebutton">Go to Tasks</button>
         </Link>
         <Link to="/bo/privatetasks">
           <button className="cryptosafebutton">Go to Private Tasks</button>
+        </Link>
+        <Link to="/bo/blogs">
+          <button className="cryptosafebutton">Manage Blogs</button>
         </Link>
       </div>
     );

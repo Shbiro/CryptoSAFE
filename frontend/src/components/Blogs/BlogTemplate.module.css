@@ -1,0 +1,110 @@
+/* ✅ עיצוב כללי */
+.blogContainer {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* ✅ כותרת */
+.blogTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+    text-align: center;
+    text-align: right; /* יישור מימין */
+    direction: rtl; /* כיוון עברית רק למאמר */
+}
+
+/* ✅ תמונת שער */
+.blogImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ פרטי המאמר */
+.blogMeta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    text-align: right; /* יישור מימין */
+    direction: rtl; /* כיוון עברית רק למאמר */
+}
+
+.blogMeta span {
+    margin-right: 10px;
+}
+
+/* ✅ תוכן המאמר */
+.blogContent {
+    text-align: right; /* יישור מימין */
+    direction: rtl; /* כיוון עברית רק למאמר */
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    padding: 10px;
+}
+
+.blogContent h1, .blogContent h2, .blogContent h3 {
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.blogContent h1 {
+    font-size: 2rem;
+    color: #0073e6;
+}
+
+.blogContent h2 {
+    font-size: 1.7rem;
+    color: #005bb5;
+}
+
+.blogContent h3 {
+    font-size: 1.4rem;
+    color: #004494;
+}
+
+/* ✅ תגיות */
+.blogTags {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    text-align: right; /* יישור מימין */
+    direction: rtl; /* כיוון עברית רק למאמר */
+}
+
+.blogTag {
+    background: #0073e6;
+    color: #fff;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    text-align: center;
+    cursor: default;
+    transition: background 0.3s;
+    text-align: right; /* יישור מימין */
+    direction: rtl; /* כיוון עברית רק למאמר */
+}
+
+.blogTag:hover {
+    background: #005bb5;
+}

@@ -374,3 +374,17 @@ h2::after {
 }
 
 
+/* ✅ עיצוב לוגו */
+.logo {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ✅ עיצוב הכותרת עם לינק */
+.logo-link {
+  text-decoration: none;
+  color: #fff; /* צבע הכותרת */
+  transition: color 0.3s ease-in-out;
+}
+

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom'; // ✅ ייבוא Link עבור ניווט פנימי
 import './Header.css';
 
 function Header() {
@@ -16,10 +17,8 @@ function Header() {
   };
 
   useEffect(() => {
-    // הוספת מאזין לאירועים של לחיצה
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      // הסרת מאזין לאירועים של לחיצה
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
@@ -27,14 +26,14 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <h1>CryptoSafe</h1>
+      <Link to="/" className="logo-link">CryptoSAFE</Link>
       </div>
       <div className="menu-toggle" onClick={toggleMenu}>
         ☰
       </div>
       <nav className={`nav ${menuOpen ? 'menu-open' : ''}`} ref={navRef}>
         <ul>
-          <li><a href="#home">ראשי</a></li>
+          <li><Link to="/">ראשי</Link></li>
           <li className="dropdown">
             <a href="#services">שירותים</a>
             <ul className="dropdown-menu">
@@ -47,9 +46,13 @@ function Header() {
           <li><a href="#pricing">תמחור</a></li>
           <li><a href="#about">אודות</a></li>
           <li><a href="#contact">יצירת קשר</a></li>
+
+          {/* ✅ הוספת קישור לעמוד הבלוגים */}
+          <li><Link to="/blogs">בלוגים</Link></li>
+
           <div className="logomobilemenu">
-        <h1>CryptoSafe</h1>
-      </div>
+            <h1>CryptoSafe</h1>
+          </div>
         </ul>
       </nav>
     </header>
