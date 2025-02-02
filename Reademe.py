@@ -11,7 +11,7 @@
 # העלה ל git
 #git status
 #git add .
-#git commit -m "color change about radius and fake money"
+#git commit -m "add blog"
 #git push
 
 # git pull https://amiratiashuri@gmail.com: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@github.com/Shbiro/CryptoSAFE.git
@@ -23,6 +23,7 @@
 # עדכונים ב ssh לאחר עדכון ב git
 #cd ~/CryptoSAFE
 #git stash
+#git reset --hard origin/main
 #git pull origin main
 #git stash pop
 #cd frontend

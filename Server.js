@@ -24,6 +24,8 @@ const APP_JS_PATH = path.join(__dirname, '../frontend/src/App.js');
 // Middleware
 app.use(cors());
 app.use(express.json());
+// 📌 נתיב סטטי לקובץ מפת האתר
+app.use('/sitemap.xml', express.static(path.join(__dirname, 'sitemap.xml')));
 
 // Serve React frontend as static files
 const buildPath = path.join(__dirname, 'build');
@@ -322,6 +324,8 @@ app.post('/api/blogs', async (req, res) => {
 
       updateBlogGallery(fileName, title, seoDescription, image);
 
+      updateSitemap(fileName, url);
+
       res.status(201).json({ success: true, message: '✅ Blog added successfully', fileName });
   } catch (error) {
       console.error('❌ Error adding blog to Airtable:', error);
@@ -499,6 +503,51 @@ const updateBlogGallery = (fileName, title, seoDescription, image) => {
   }
 };
 
+
+const SITEMAP_PATH = path.join(__dirname, 'sitemap.xml');
+
+const updateSitemap = (fileName, url) => {
+    console.log(`📝 Updating sitemap with new blog: ${fileName}`);
+
+    // 1️⃣ קריאת קובץ ה-sitemap הנוכחי (אם קיים)
+    let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://cryptosafe.co.il/</loc>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://cryptosafe.co.il/blogs</loc>
+        <priority>0.9</priority>
+    </url>
+</urlset>`;
+
+    if (fs.existsSync(SITEMAP_PATH)) {
+        sitemapContent = fs.readFileSync(SITEMAP_PATH, 'utf8');
+    }
+
+    // 2️⃣ יצירת שורת URL חדשה עם `/blogs/`
+    const newUrlEntry = `
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/${url}</loc> 
+        <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+        <priority>0.7</priority>
+    </url>`;
+
+    // 3️⃣ בדיקה אם המאמר כבר קיים בסייטמאפ
+    if (sitemapContent.includes(newUrlEntry.trim())) {
+        console.log("🔹 Blog already exists in sitemap.");
+        return;
+    }
+
+    // 4️⃣ הוספת כתובת המאמר החדשה לתוך `sitemap.xml`
+    sitemapContent = sitemapContent.replace('</urlset>', `${newUrlEntry}\n</urlset>`);
+
+    // 5️⃣ שמירת השינויים לקובץ `sitemap.xml`
+    fs.writeFileSync(SITEMAP_PATH, sitemapContent, 'utf8');
+
+    console.log(`✅ Sitemap updated successfully: ${SITEMAP_PATH}`);
+};
 
 // מאמרים
 
