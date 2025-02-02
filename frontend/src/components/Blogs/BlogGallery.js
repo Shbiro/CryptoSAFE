@@ -24,7 +24,7 @@ const articles = [
       title: "\"איך לבחור ארנק קריפטו מאובטח? המדריך המלא לארנקים דיגיטליים\"",
       description: "מחפש את הדרך הבטוחה לשמור על הביטקוין שלך? במדריך הזה תגלה אילו סוגי ארנקים קיימים, כיצד להגן על הקריפטו שלך ולמה \"ארנק קר\" עדיף מ\"ארנק חם\".\n\n",
       image: "https://images.pexels.com/photos/3631991/pexels-photo-3631991.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      link: "/blogs/howtochosewallet" // ✅ קישור אוטומטי לעמוד הבלוג
+      link: "/blogs/howtochoosewallet" // ✅ קישור אוטומטי לעמוד הבלוג
   },
 
       {
