@@ -1,3 +1,4 @@
+import HowKeepSafeYourMoney from './Pages/HowKeepSafeYourMoney.js';
 import ETHCONTARCTS from './Pages/ETHCONTARCTS.js';
 import WhatisBitcoin from './Pages/WhatisBitcoin.js';
 import React from 'react';
@@ -6,6 +7,14 @@ import BlogCard from './BlogCard';
 import styles from './Blogs.module.css'; // CSS Modules
 
 const articles = [
+
+      {
+          id: Math.floor(Math.random() * 10000),
+          title: "חברת נאמנות לקריפטו: כיצד לשמור על נכסי הקריפטו שלך בביטחון מלא?",
+          description: "חברות נאמנות לקריפטו מציעות פתרונות לאבטחת מטבעות דיגיטליים והגנה מפני סיכונים. גלה כיצד הן פועלות, למי הן מתאימות, ואיך לבחור את החברה הנכונה עבורך.",
+          image: "https://images.pexels.com/photos/4672714/pexels-photo-4672714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          link: "/blogs/howkeepsafeyourmoney" // ✅ קישור אוטומטי לעמוד הבלוג
+      },
 
       {
           id: Math.floor(Math.random() * 10000),
