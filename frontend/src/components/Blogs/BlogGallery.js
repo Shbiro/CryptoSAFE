@@ -6,7 +6,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // ✅ הוספת קישורי ניווט
 import BlogCard from './BlogCard';
 import styles from './Blogs.module.css'; // CSS Modules
-import HowToChoseWallet from './Pages/HowToChoseWallet.js';
+import HowToChooseWallet from './Pages/HowToChooseWallet.js';
 import AmIBeingScammed from './Pages/AmIBeingScammed.js';
 
 const articles = [

@@ -2,7 +2,8 @@ import React from 'react';
 import Header from '../Header/Header';
 import BlogGallery from './BlogGallery';
 import './Blogs.css';
-
+import WhatsAppButton from '../WhatsAppButton/WhatsAppButton';
+import Footer from '../Footer/Footer'
 const Blogs = () => {
     return (
         <div className='Blogs'>
@@ -22,6 +23,8 @@ const Blogs = () => {
 
             {/* ✅ גלריית הבלוגים */}
             <BlogGallery />
+            <WhatsAppButton />
+            <Footer />
         </div>
     );
 };

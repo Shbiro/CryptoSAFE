@@ -2,6 +2,9 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import styles from './BlogTemplate.module.css';
 import Header from '../Header/Header';
+import WhatsAppButton from '../WhatsAppButton/WhatsAppButton';
+import CryptoPricesTable from '../CryptoPricesTable/CryptoPricesTable'; // ייבוא הטבלה
+import Footer from '../Footer/Footer';
 
 const BlogTemplate = ({ title, url, seoTitle, seoDescription, image, content, tags, author, category, views, likes }) => {
 
@@ -28,7 +31,7 @@ const BlogTemplate = ({ title, url, seoTitle, seoDescription, image, content, ta
                 {/* ✅ תגיות Open Graph */}
                 <meta property="og:title" content={seoTitle} />
                 <meta property="og:description" content={seoDescription} />
-                <meta property="og:image" content={image} />
+                <meta property="og:image" content="https://cryptosafe.co.il/Ogimage.png" /> 
                 <meta property="og:type" content="article" />
                 <meta property="og:url" content={`https://yourwebsite.com/blogs/${url}`} />
 
@@ -72,6 +75,12 @@ const BlogTemplate = ({ title, url, seoTitle, seoDescription, image, content, ta
                     ))}
                 </div>
             )}
+            <WhatsAppButton />
+            <div>
+                <h1>Crypto Price</h1>
+                <CryptoPricesTable />
+                <Footer />
+            </div>
         </div>
     );
 };

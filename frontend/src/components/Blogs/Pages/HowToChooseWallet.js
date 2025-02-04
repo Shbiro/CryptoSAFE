@@ -2,7 +2,7 @@
 import React from 'react';
 import BlogTemplate from '../BlogTemplate';
 
-const HowToChoseWallet = () => {
+const HowToChooseWallet = () => {
   return (
       <BlogTemplate 
           title={"\"איך לבחור ארנק קריפטו מאובטח? המדריך המלא לארנקים דיגיטליים\""}
@@ -20,4 +20,4 @@ const HowToChoseWallet = () => {
   );
 };
 
-export default HowToChoseWallet;
+export default HowToChooseWallet;

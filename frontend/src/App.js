@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import UseScrollToTop from "./hooks/UseScrollToTop"; // ייבוא ה-hook
 import HomePage from './components/HomePage/HomePage';
 import BackOffice from './components/BackOffice/BackOffice';
 import Tasks from './components/Tasks/Tasks';
@@ -13,12 +14,13 @@ import WhatisBitcoin from './components/Blogs/Pages/WhatisBitcoin.js';
 import ETHCONTARCTS from './components/Blogs/Pages/ETHCONTARCTS.js';
 import HowKeepSafeYourMoney from './components/Blogs/Pages/HowKeepSafeYourMoney.js';
 import HowBitcoinWork from './components/Blogs/Pages/HowBitcoinWork.js';
-import HowToChoseWallet from './components/Blogs/Pages/HowToChoseWallet.js';
+import HowToChooseWallet from './components/Blogs/Pages/HowToChooseWallet.js';
 import AmIBeingScammed from './components/Blogs/Pages/AmIBeingScammed.js';
 function App() {
   return (
     <AuthProvider>
       <Router>
+      <UseScrollToTop />
         <div className="App">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -26,7 +28,7 @@ function App() {
             <Route path="/blogs/ethcontarcts" element={<ETHCONTARCTS />} />
             <Route path="/blogs/howkeepsafeyourmoney" element={<HowKeepSafeYourMoney />} />
             <Route path="/blogs/howbitcoinwork" element={<HowBitcoinWork />} />
-            <Route path="/blogs/howtochoosewallet" element={<HowToChoseWallet />} />
+            <Route path="/blogs/howtochoosewallet" element={<HowToChooseWallet />} />
             <Route path="/blogs/amibeingscammed" element={<AmIBeingScammed />} />
 <Route path="/blogs" element={<Blogs />} />
             <Route path="/bo" element={<BackOffice />} />
