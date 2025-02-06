@@ -1,0 +1,189 @@
+/* עיצוב כללי לעמוד יצירת קשר */
+.contact-page {
+    max-width: 1200px;
+    width: 100%;
+    padding: 350px;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  /* כותרת ראשית */
+  .contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    margin-top: -250px;
+  }
+  
+/* עיצוב קוביות למידע יצירת קשר */
+/* עיצוב קוביות למידע יצירת קשר - הייטקיסטי */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+  }
+  
+  /* עיצוב קוביות עם שקיפות וזוהר */
+  .contact-info div {
+    background: rgba(255, 255, 255, 0.15); /* שקיפות עדינה */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 260px;
+    backdrop-filter: blur(10px); /* טשטוש רקע */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  /* אפקט כניסה חלק */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  
+  /* טקסט מודרני */
+  .contact-info p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* טקסט לבן */
+    text-align: center;
+    direction: rtl;
+  }
+  
+  /* קישורים - מראה זוהר */
+  .contact-info a {
+    text-decoration: none;
+    color: #f4c10f;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+
+  
+  
+  /* רשתות חברתיות */
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .social-links img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-links img:hover {
+    transform: scale(1.2);
+  }
+  
+
+  
+/* עיצוב שאלות נפוצות */
+.faq {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: right;
+  direction: rtl;
+}
+
+.faq details {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  position: relative;
+  text-align: right;
+}
+
+.faq summary {
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start; /* שם את החץ בצד ימין */
+  list-style: none; /* מסיר את החץ המובנה של הדפדפן */
+  position: relative;
+  padding-right: 20px; /* מוסיף רווח לחץ */
+}
+
+.faq summary::before {
+  content: "▶"; /* חץ מותאם אישית */
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.faq details[open] summary::before {
+  transform: rotate(90deg); /* מסובב את החץ כאשר הפירוט פתוח */
+}
+
+.faq p {
+  margin-top: 5px;
+  color: #333;
+}
+
+/* עיצוב רספונסיבי למסכים של 1024px ומטה */
+@media (max-width: 1024px) {
+    .contact-page {
+      width: 80%;
+      padding: 30px;
+    }
+    .contact-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+        margin-top: 50px;
+      }
+      .faq summary::before {
+        content: "▶"; /* חץ מותאם אישית */
+        position: absolute;
+        left: 0;
+        transition: transform 0.3s ease;
+      }
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+}
+
+.form{
+    margin-top: 40px;
+}
+
+/* מחביא אלמנטים בהתחלה */
+.contact-info,
+.form,
+.faq,
+.contact-map {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* כאשר האלמנטים מופיעים בגלילה */
+.contact-info.slide-in,
+.form.slide-in,
+.faq.slide-in,
+.contact-map.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -16,6 +16,7 @@ import HowKeepSafeYourMoney from './components/Blogs/Pages/HowKeepSafeYourMoney.
 import HowBitcoinWork from './components/Blogs/Pages/HowBitcoinWork.js';
 import HowToChooseWallet from './components/Blogs/Pages/HowToChooseWallet.js';
 import AmIBeingScammed from './components/Blogs/Pages/AmIBeingScammed.js';
+import Contact from './components/StaticPages/Contact.js';
 function App() {
   return (
     <AuthProvider>
@@ -30,6 +31,7 @@ function App() {
             <Route path="/blogs/howbitcoinwork" element={<HowBitcoinWork />} />
             <Route path="/blogs/howtochoosewallet" element={<HowToChooseWallet />} />
             <Route path="/blogs/amibeingscammed" element={<AmIBeingScammed />} />
+            <Route path= "/Contact" element={<Contact />} />
 <Route path="/blogs" element={<Blogs />} />
             <Route path="/bo" element={<BackOffice />} />
             <Route
