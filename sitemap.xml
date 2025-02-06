@@ -24,19 +24,25 @@
 
     <url>
         <loc>https://cryptosafe.co.il/blogs/HowBitcoinWork</loc> 
-        <lastmod>2025-02-02</lastmod>
+        <lastmod>2025-02-06</lastmod>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://cryptosafe.co.il/blogs/HowToChooseWallet</loc> 
-        <lastmod>2025-02-02</lastmod>
+        <lastmod>2025-02-06</lastmod>
         <priority>0.7</priority>
     </url>
 
     <url>
         <loc>https://cryptosafe.co.il/blogs/AmIBeingScammed</loc> 
-        <lastmod>2025-02-02</lastmod>
+        <lastmod>2025-02-06</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/contact</loc> 
+        <lastmod>2025-02-06</lastmod>
         <priority>0.7</priority>
     </url>
 </urlset>
