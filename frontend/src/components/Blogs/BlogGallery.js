@@ -9,8 +9,71 @@ import styles from './Blogs.module.css'; // CSS Modules
 import HowToChooseWallet from './Pages/HowToChooseWallet.js';
 import AmIBeingScammed from './Pages/AmIBeingScammed.js';
 import { Helmet } from 'react-helmet';
+import Miningbitcoin from './Pages/Miningbitcoin.js';
+import Trumpusdt from './Pages/Trumpusdt.js';
+import Xrpusdt from './Pages/Xrpusdt.js';
+import Dogeusdt from './Pages/Dogeusdt.js';
+import ElonMuskSpacex from './Pages/ElonMuskSpacex.js';
+import ElonMuskTesla from './Pages/ElonMuskTesla.js';
+import BigcompanyAndBitcoin from './Pages/BigcompanyAndBitcoin.js';
 
 const articles = [
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: "חברות ענק והקשר שלהן לביטקוין – מהפכה פיננסית או טרנד חולף?",
+      description: "בעשור האחרון, ביטקוין הפך ממטבע דיגיטלי ניסיוני למערכת פיננסית גלובלית שמושכת עניין רחב מצד חברות הענק הגדולות בעולם. חברות כמו Tesla, MicroStrategy, Square ואפילו ענקיות כמו PayPal ו-Mastercard כבר אימצו את ביטקוין בדרכים שונות – בין אם כהשקעה אסטרטגית, כאמצעי תשלום או כחלק מאסטרטגיות פיתוח פיננסיות.\n\nבמאמר זה נסקור כיצד החברות הגדולות משלבות ביטקוין במודל העסקי שלהן, ההשפעה שלהן על מחיר השוק, האתגרים שהן מתמודדות איתם, ומה צופן העתיד עבור תאגידים וביטקוין.\n\n",
+      image: "https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/bigcompanyandbitcoin" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: "אילון מאסק וטסלה – מהפכת הרכב החשמלי והעתיד של התחבורה העולמית",
+      description: "אילון מאסק (Elon Musk) הוא אחד היזמים המשפיעים ביותר של דורנו, עם חזון להפוך את העולם ליעיל, טכנולוגי ובר-קיימא. אחת החברות המרכזיות ביותר שבבעלותו היא Tesla, שהפכה ממיזם קטן לחלוטין ליצרנית הרכבים החשמליים הגדולה והמתקדמת בעולם. במאמר זה נסקור את ההיסטוריה של טסלה, החזון של אילון מאסק, הפיתוחים החדשניים של החברה, ההשפעה שלה על תעשיית הרכב, האתגרים שעומדים בפניה והעתיד של התחבורה החשמלית.",
+      image: "https://images.pexels.com/photos/28123191/pexels-photo-28123191/free-photo-of-the-tesla-model-s-is-shown-in-this-image.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/elonmusktesla" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: "אילון מאסק ו-SpaceX – המהפכה של חקר החלל והעתיד של האנושות",
+      description: "אילון מאסק (Elon Musk) הוא אחת הדמויות המשפיעות ביותר בעידן המודרני, יזם וטכנולוג פורץ דרך שמוביל מהפכות בתעשיות שונות. אחת מהחברות הבולטות ביותר בבעלותו היא SpaceX, שנוסדה במטרה להפוך את המסע לחלל לנגיש ולבנות עתיד שבו האנושות תוכל לחיות מחוץ לכדור הארץ. במאמר זה נסקור את סיפורו של אילון מאסק, כיצד הקים את SpaceX, ההישגים המרכזיים של החברה, החזון שלה לעתיד, והאתגרים שעומדים בפניה.",
+      image: "https://images.pexels.com/photos/12861275/pexels-photo-12861275.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/elonmuskspacex" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: " DOGE/USDT – כל מה שצריך לדעת על הדוג'קוין במסחר קריפטו",
+      description: "מטבע DOGE/USDT הוא אחד מצמדי המסחר הפופולריים ביותר בשוק הקריפטו. דוג'קוין (DOGE), שהחל כבדיחה, הפך לאחד המטבעות הדיגיטליים המדוברים ביותר, בעיקר בשל הקהילה הגדולה שסביבו והתמיכה של יזמים בולטים. במאמר זה נסקור את ההיסטוריה של דוג'קוין, כיצד הוא פועל, המסחר מול USDT, הגורמים המשפיעים על מחירו, והאם הוא נשאר רלוונטי גם היום.",
+      image: "https://images.pexels.com/photos/7767506/pexels-photo-7767506.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/dogeusdt" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: " XRP/USDT – כל מה שצריך לדעת על מסחר במטבע הקריפטוגרפי של ריפל",
+      description: "מטבע XRP/USDT הוא אחד מצמדי המסחר הפופולריים ביותר בעולם הקריפטו. XRP, המטבע של ריפל (Ripple), נועד להקל על עסקאות פיננסיות חוצות גבולות במהירות ובעלויות נמוכות. במאמר זה נסקור את ההיסטוריה של XRP, כיצד הוא פועל, השימושים האפשריים שלו, המסחר בצמד XRP/USDT, הגורמים המשפיעים על מחירו, והאם הוא מהווה הזדמנות מסחרית מעניינת.",
+      image: "https://images.pexels.com/photos/6780914/pexels-photo-6780914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/xrpusdt" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: "מטבע TRUMP/USDT – כל מה שצריך לדעת על המטבע הקריפטוגרפי המדובר",
+      description: "מטבע TRUMP/USDT הוא מטבע קריפטוגרפי שזכה לעניין רב בקרב משקיעים וסוחרים. במאמר זה נסקור את המאפיינים של המטבע, ההיסטוריה שלו, השימושים האפשריים, הבורסות שבהן ניתן לסחור בו, והאתגרים הקשורים אליו.",
+      image: "https://images.pexels.com/photos/936237/pexels-photo-936237.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/trumpusdt" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: "🚀 כריית ביטקוין – כל מה שצריך לדעת על הדרך לכרות ולהרוויח ביטקוין",
+      description: "במאמר זה נצלול אל עולם כריית הביטקוין ונבין כיצד היא פועלת, אילו ציוד ותוכנות נדרשים לתהליך, כיצד ניתן להרוויח ממנה, מהם האתגרים שהיא מציבה, והאם היא עדיין משתלמת בשנת 2024. נלמד גם על ההבדלים בין כרייה עצמאית לבריכות כרייה, ונקבל טיפים מעשיים לכל מי שמעוניין להתחיל לכרות ביטקוין.",
+      image: "https://images.pexels.com/photos/6778581/pexels-photo-6778581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/miningbitcoin" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
 
   {
       id: Math.floor(Math.random() * 10000),

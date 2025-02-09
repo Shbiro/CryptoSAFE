@@ -18,6 +18,13 @@ import HowToChooseWallet from './components/Blogs/Pages/HowToChooseWallet.js';
 import AmIBeingScammed from './components/Blogs/Pages/AmIBeingScammed.js';
 import Contact from './components/StaticPages/Contact.js';
 import About from './components/StaticPages/About.js';
+import Miningbitcoin from './components/Blogs/Pages/Miningbitcoin.js';
+import Trumpusdt from './components/Blogs/Pages/Trumpusdt.js';
+import Xrpusdt from './components/Blogs/Pages/Xrpusdt.js';
+import Dogeusdt from './components/Blogs/Pages/Dogeusdt.js';
+import ElonMuskSpacex from './components/Blogs/Pages/ElonMuskSpacex.js';
+import ElonMuskTesla from './components/Blogs/Pages/ElonMuskTesla.js';
+import BigcompanyAndBitcoin from './components/Blogs/Pages/BigcompanyAndBitcoin.js';
 function App() {
   return (
     <AuthProvider>
@@ -34,6 +41,13 @@ function App() {
             <Route path="/blogs/amibeingscammed" element={<AmIBeingScammed />} />
             <Route path= "/Contact" element={<Contact />} />
             <Route path= "/About" element={<About />} />
+            <Route path="/blogs/miningbitcoin" element={<Miningbitcoin />} />
+            <Route path="/blogs/trumpusdt" element={<Trumpusdt />} />
+            <Route path="/blogs/xrpusdt" element={<Xrpusdt />} />
+            <Route path="/blogs/dogeusdt" element={<Dogeusdt />} />
+            <Route path="/blogs/elonmuskspacex" element={<ElonMuskSpacex />} />
+            <Route path="/blogs/elonmusktesla" element={<ElonMuskTesla />} />
+            <Route path="/blogs/bigcompanyandbitcoin" element={<BigcompanyAndBitcoin />} />
 <Route path="/blogs" element={<Blogs />} />
             <Route path="/bo" element={<BackOffice />} />
             <Route

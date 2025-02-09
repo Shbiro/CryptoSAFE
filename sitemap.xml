@@ -87,4 +87,46 @@
         </image:image>
     </url>
 
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/Miningbitcoin</loc> 
+        <lastmod>2025-02-09</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/Trumpusdt</loc> 
+        <lastmod>2025-02-09</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/Xrpusdt</loc> 
+        <lastmod>2025-02-09</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/Dogeusdt</loc> 
+        <lastmod>2025-02-09</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/ElonMuskSpacex</loc> 
+        <lastmod>2025-02-09</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/ElonMuskTesla</loc> 
+        <lastmod>2025-02-09</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/BigcompanyAndBitcoin</loc> 
+        <lastmod>2025-02-09</lastmod>
+        <priority>0.7</priority>
+    </url>
 </urlset>
