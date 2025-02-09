@@ -82,8 +82,21 @@ const BlogsBo = () => {
         }
     };
 
+    const goToCryptoSafe = () => {
+        window.open('https://cryptosafe.co.il', '_blank', 'noopener,noreferrer');
+      };
+      const goToblogs = () => {
+        window.open('https://cryptosafe.co.il/blogs', '_blank', 'noopener,noreferrer');
+      };
+
     return (
         <div className={styles.blogsBoContainer}> {/* ✅ className ייחודי לכל הקומפוננטה */}
+              <button className='cryptosafebutton' onClick={goToCryptoSafe}>
+        🌐 Visit CryptoSafe
+      </button>
+      <button className='cryptosafebutton' onClick={goToblogs}>
+        🌐 Visit blog
+      </button>
             <h1 className={styles.blogsBoTitle}>📝 ניהול מאמרים</h1>
             <form onSubmit={handleSubmit} className={styles.blogsBoForm}>
 

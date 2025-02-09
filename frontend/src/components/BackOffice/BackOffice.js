@@ -7,6 +7,7 @@ function BackOffice() {
   const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // ✅ סטייט להצגת הסיסמה
   const [error, setError] = useState('');
 
   const handleLogin = async (e) => {
@@ -72,11 +73,18 @@ function BackOffice() {
         />
         <input
           id="password-input"
-          type="password"
+          type={showPassword ? "text" : "password"} // ✅ שינוי `type` בהתאם למצב
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+                  <button
+            type="button"
+            className="show-password-button"
+            onClick={() => setShowPassword(!showPassword)}
+          >
+            {showPassword ? '🙈 Hide' : '👁 Show Password'}
+          </button>
         <button type="submit">Login</button>
       </form>
       {error && <p className="error">{error}</p>}

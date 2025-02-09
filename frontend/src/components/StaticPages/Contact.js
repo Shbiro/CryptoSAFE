@@ -25,6 +25,7 @@ const Contact = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://cryptosafe.co.il/contact" />
         <meta property="og:image" content="https://cryptosafe.co.il/Ogimage.png" />
+        <meta property="og:image:secure_url" content="https://cryptosafe.co.il/og-image.jpg" />
       </Helmet>
 
       <Header />

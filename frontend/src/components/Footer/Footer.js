@@ -21,6 +21,7 @@ const Footer = () => {
           <Link to="/blogs">בלוגים</Link>
           <Link to="/bo">ניהול תוכן</Link>
           <Link to="/bo/tasks">משימות</Link>
+          <Link to="/about">אודות</Link>
           <Link to="/contact">צור קשר</Link>
         </div>
         <div className="footer-section">

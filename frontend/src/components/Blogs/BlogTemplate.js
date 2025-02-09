@@ -32,6 +32,7 @@ const BlogTemplate = ({ title, url, seoTitle, seoDescription, image, content, ta
                 <meta property="og:title" content={seoTitle} />
                 <meta property="og:description" content={seoDescription} />
                 <meta property="og:image" content="https://cryptosafe.co.il/Ogimage.png" /> 
+                <meta property="og:image:secure_url" content="https://cryptosafe.co.il/og-image.jpg" />
                 <meta property="og:type" content="article" />
                 <meta property="og:url" content={`https://yourwebsite.com/blogs/${url}`} />
 

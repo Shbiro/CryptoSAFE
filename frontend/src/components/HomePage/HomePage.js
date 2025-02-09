@@ -32,6 +32,7 @@ function HomePage() {
           content="CryptoSafe | קריפטוסייפ - חברת נאמנות לקריפטו המובילה בניהול נכסים דיגיטליים. שירות אמין ובטוח להשקעות שלך."
         />
         <meta property="og:image" content="https://cryptosafe.co.il/Ogimage.png" />
+        <meta property="og:image:secure_url" content="https://cryptosafe.co.il/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://cryptosafe.co.il/" />

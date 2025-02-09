@@ -1,48 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
     <url>
         <loc>https://cryptosafe.co.il/</loc>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://cryptosafe.co.il/og-image.jpg</image:loc>
+        </image:image>
     </url>
+
     <url>
         <loc>https://cryptosafe.co.il/blogs</loc>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://cryptosafe.co.il/og-image.jpg</image:loc>
+        </image:image>
     </url>
+
     <url>
         <loc>https://cryptosafe.co.il/blogs/whatisbitcoin</loc>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://cryptosafe.co.il/og-image.jpg</image:loc>
+        </image:image>
     </url>
+
     <url>
         <loc>https://cryptosafe.co.il/blogs/ethcontarcts</loc>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://cryptosafe.co.il/og-image.jpg</image:loc>
+        </image:image>
     </url>
+
     <url>
         <loc>https://cryptosafe.co.il/blogs/howkeepsafeyourmoney</loc>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://cryptosafe.co.il/og-image.jpg</image:loc>
+        </image:image>
     </url>
-
 
     <url>
         <loc>https://cryptosafe.co.il/blogs/HowBitcoinWork</loc> 
         <lastmod>2025-02-06</lastmod>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://cryptosafe.co.il/og-image.jpg</image:loc>
+        </image:image>
     </url>
 
     <url>
         <loc>https://cryptosafe.co.il/blogs/HowToChooseWallet</loc> 
         <lastmod>2025-02-06</lastmod>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://cryptosafe.co.il/og-image.jpg</image:loc>
+        </image:image>
     </url>
 
     <url>
         <loc>https://cryptosafe.co.il/blogs/AmIBeingScammed</loc> 
         <lastmod>2025-02-06</lastmod>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://cryptosafe.co.il/og-image.jpg</image:loc>
+        </image:image>
     </url>
 
     <url>
         <loc>https://cryptosafe.co.il/contact</loc> 
         <lastmod>2025-02-06</lastmod>
         <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://cryptosafe.co.il/og-image.jpg</image:loc>
+        </image:image>
     </url>
+
+        <url>
+        <loc>https://cryptosafe.co.il/about</loc> 
+        <lastmod>2025-02-06</lastmod>
+        <priority>0.7</priority>
+        <image:image>
+            <image:loc>https://cryptosafe.co.il/og-image.jpg</image:loc>
+        </image:image>
+    </url>
+
 </urlset>

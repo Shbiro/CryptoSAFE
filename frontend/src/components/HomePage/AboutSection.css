@@ -13,11 +13,11 @@
   .about-title {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #ffffff;
     font-weight: 700;
     letter-spacing: 1.2px;
-    text-align: center; /* כותרת מיושרת לשמאל */
-  }
+    text-align: center;
+    color: #ffffff; /* כחול */
+}
   
   .about-text {
     font-size: 1.2rem;
@@ -28,7 +28,34 @@
   }
   
   .about-text strong {
-    color: #007bff; /* הדגשת שם החברה */
+    color: #ffffff; /* הדגשת שם החברה */
     font-weight: 600;
   }
   
+  .aboutbutton {
+    width: 25%;
+    padding: 15px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase; /* אותיות גדולות */
+    align-items: center;
+}
+
+/* אפקט hover */
+.aboutbutton:hover {
+    background-color: #2bb4c9;
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* אפקט קליק */
+.aboutbutton:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}

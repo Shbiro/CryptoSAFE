@@ -8,6 +8,7 @@ import BlogCard from './BlogCard';
 import styles from './Blogs.module.css'; // CSS Modules
 import HowToChooseWallet from './Pages/HowToChooseWallet.js';
 import AmIBeingScammed from './Pages/AmIBeingScammed.js';
+import { Helmet } from 'react-helmet';
 
 const articles = [
 
@@ -66,6 +67,17 @@ const articles = [
 const BlogGallery = () => {
     return (
         <div className={styles.blogGallery}>
+              <Helmet>
+        <title>בלוג קריפטו - CryptoSafe</title>
+        <meta name="description" content="הבלוג של CryptoSafe - כל מה שצריך לדעת על ביטקוין, אתריום, ארנקים דיגיטליים ואבטחת נכסים קריפטוגרפיים." />
+        <meta property="og:title" content="בלוג קריפטו - CryptoSafe" />
+        <meta property="og:description" content="מאמרים מקצועיים על קריפטו, בלוקצ'יין ואבטחת מטבעות דיגיטליים. גלה כיצד לשמור על ההשקעות שלך." />
+        <meta property="og:image" content="https://cryptosafe.co.il/og-image.jpg" />
+        <meta property="og:image:secure_url" content="https://cryptosafe.co.il/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+      </Helmet>    
             {articles.map((article) => (
                 <Link key={article.id} to={article.link} className={styles.blogLink}>
                     <BlogCard

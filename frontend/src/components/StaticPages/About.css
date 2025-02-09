@@ -1,0 +1,120 @@
+.about-container {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.about-content {
+    text-align: right;
+    direction: rtl;
+}
+.about-content2 {
+    text-align: right;
+    direction: rtl;
+}
+.about-content3 {
+    text-align: right;
+    direction: rtl;
+}
+.about-titlePAGE {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-align: center;
+}
+
+.about-subtitle {
+    font-size: 28px;
+    color: #333;
+    margin-top: 30px;
+}
+
+.about-text {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.about-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: right;
+}
+
+.about-list li {
+    font-size: 18px;
+    color: #444;
+    padding: 5px 0;
+}
+
+.about-list li strong {
+    color: #007bff;
+}
+
+.contact-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+}
+
+/* מחביא אלמנטים בהתחלה */
+.about-content,
+.about-content2,
+.about-content3 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.3s ease-out, transform 0.8s ease-out;
+}
+
+/* כאשר האלמנט נכנס לתצוגה */
+.about-content.slide-in,
+.about-content2.slide-in,
+.about-content3.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* אנימציה לכניסה חלקה */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* אפקט ייחודי עבור about-content2 */
+.about-content2 {
+    transform: translateY(200px);
+}
+
+.about-content2.slide-in {
+    transform: translateY(0);
+}
+
+/* אפקט כניסה עם Keyframe */
+.about-content2 {
+    animation: fadeIn 0.8s ease-out;
+}

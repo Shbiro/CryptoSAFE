@@ -43,7 +43,7 @@ function Header() {
             </ul>
           </li>
           <li><a href="#pricing">תמחור</a></li>
-          <li><a href="#about">אודות</a></li>
+          <li><a href="/about">אודות</a></li>
           <li><a href="/contact">יצירת קשר</a></li>
 
           {/* ✅ הוספת קישור לעמוד הבלוגים */}

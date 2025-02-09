@@ -1,0 +1,15 @@
+.show-password-button {
+    font-size: 10px;  /* ✅ גודל טקסט קטן יותר */
+    padding: 2px 5px;  /* ✅ כריתת כפתור קטנה */
+    background: none;
+    border: 1px solid #ffffff;  /* ✅ מסגרת כדי להפריד אותו */
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px; /* ✅ מראה יותר אסתטי */
+    margin-top: -5px;
+}
+
+.show-password-button:hover {
+    color: #ddd;
+    background: rgba(255, 255, 255, 0.2);
+}

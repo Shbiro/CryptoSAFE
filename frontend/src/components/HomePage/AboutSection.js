@@ -1,7 +1,8 @@
 import React from 'react';
 import './AboutSection.css'; // ניצור קובץ CSS לעיצוב
-
+import { useNavigate } from "react-router-dom";
 const AboutSection = () => {
+  const navigate = useNavigate();
   return (
     <div className="about-section">
       <h2 className="about-title">אודות החברה</h2>
@@ -15,6 +16,12 @@ const AboutSection = () => {
         עם צוות מומחים בעלי ניסיון רב ולקוחות מרוצים, אנו מבטיחים חוויית משתמש 
         יוצאת דופן ומבטיחים שעסקאות הקריפטו שלכם יהיו בטוחות ופשוטות.
       </p>
+      <button
+      className="aboutbutton" 
+            onClick={() => navigate("/about")}
+        >
+            אודות
+        </button>
     </div>
   );
 };
