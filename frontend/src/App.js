@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react'; // ✅ הוספת useEffect
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import UseScrollToTop from "./hooks/UseScrollToTop"; // ייבוא ה-hook
@@ -25,8 +25,20 @@ import Dogeusdt from './components/Blogs/Pages/Dogeusdt.js';
 import ElonMuskSpacex from './components/Blogs/Pages/ElonMuskSpacex.js';
 import ElonMuskTesla from './components/Blogs/Pages/ElonMuskTesla.js';
 import BigcompanyAndBitcoin from './components/Blogs/Pages/BigcompanyAndBitcoin.js';
+// ✅ ייבוא Google Analytics
+import ReactGA from 'react-ga4';
+
+// ✅ אתחול Google Analytics עם ה-ID שלך
+ReactGA.initialize('G-TRGKHQC4LF');
+
 function App() {
+
+  useEffect(() => {
+    // ✅ שליחת PageView לכל שינוי בנתיב
+    ReactGA.send("pageview");
+  }, []);
   return (
+    
     <AuthProvider>
       <Router>
       <UseScrollToTop />
