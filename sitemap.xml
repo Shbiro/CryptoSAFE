@@ -129,4 +129,28 @@
         <lastmod>2025-02-09</lastmod>
         <priority>0.7</priority>
     </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/HowToOpenCryptoWallet</loc> 
+        <lastmod>2025-02-11</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/TheBiggestCryptoExchange</loc> 
+        <lastmod>2025-02-11</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/DarkCrypto</loc> 
+        <lastmod>2025-02-11</lastmod>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://cryptosafe.co.il/blogs/HowToStartWithCrypto</loc> 
+        <lastmod>2025-02-11</lastmod>
+        <priority>0.7</priority>
+    </url>
 </urlset>

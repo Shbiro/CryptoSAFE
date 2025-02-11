@@ -31,6 +31,10 @@ import ReactGA from 'react-ga4';
 // ✅ אתחול Google Analytics עם ה-ID שלך
 ReactGA.initialize('G-TRGKHQC4LF');
 
+import HowToOpenCryptoWallet from './components/Blogs/Pages/HowToOpenCryptoWallet.js';
+import TheBiggestCryptoExchange from './components/Blogs/Pages/TheBiggestCryptoExchange.js';
+import DarkCrypto from './components/Blogs/Pages/DarkCrypto.js';
+import HowToStartWithCrypto from './components/Blogs/Pages/HowToStartWithCrypto.js';
 function App() {
 
   useEffect(() => {
@@ -60,6 +64,10 @@ function App() {
             <Route path="/blogs/elonmuskspacex" element={<ElonMuskSpacex />} />
             <Route path="/blogs/elonmusktesla" element={<ElonMuskTesla />} />
             <Route path="/blogs/bigcompanyandbitcoin" element={<BigcompanyAndBitcoin />} />
+            <Route path="/blogs/howtoopencryptowallet" element={<HowToOpenCryptoWallet />} />
+            <Route path="/blogs/thebiggestcryptoexchange" element={<TheBiggestCryptoExchange />} />
+            <Route path="/blogs/darkcrypto" element={<DarkCrypto />} />
+            <Route path="/blogs/howtostartwithcrypto" element={<HowToStartWithCrypto />} />
 <Route path="/blogs" element={<Blogs />} />
             <Route path="/bo" element={<BackOffice />} />
             <Route

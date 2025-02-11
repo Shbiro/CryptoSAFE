@@ -16,8 +16,44 @@ import Dogeusdt from './Pages/Dogeusdt.js';
 import ElonMuskSpacex from './Pages/ElonMuskSpacex.js';
 import ElonMuskTesla from './Pages/ElonMuskTesla.js';
 import BigcompanyAndBitcoin from './Pages/BigcompanyAndBitcoin.js';
+import HowToOpenCryptoWallet from './Pages/HowToOpenCryptoWallet.js';
+import TheBiggestCryptoExchange from './Pages/TheBiggestCryptoExchange.js';
+import DarkCrypto from './Pages/DarkCrypto.js';
+import HowToStartWithCrypto from './Pages/HowToStartWithCrypto.js';
 
 const articles = [
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: "איך להתחיל עם קריפטו – המדריך המלא למתחילים",
+      description: "המאמר הזה נועד לכל מי שרוצה להיכנס לעולם הקריפטו אבל לא יודע מאיפה להתחיל. כאן נסביר בפירוט מה זה קריפטו, איך קונים ומוכרים מטבעות דיגיטליים, מה זה בלוקצ'יין, איך לבחור ארנק קריפטו, אילו פלטפורמות מסחר הכי טובות, ואיך להימנע מהונאות. זהו המדריך השלם למתחילים – צעד אחר צעד, כך שתוכל להתחיל בביטחון ולהימנע מטעויות נפוצות. 🚀",
+      image: "https://images.pexels.com/photos/1447418/pexels-photo-1447418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/howtostartwithcrypto" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: "דארק קריפטו: המטבעות, הסכנות, והדרך להגן על עצמך",
+      description: "המאמר הזה יעסוק בעולם הסודי של \"דארק קריפטו\" (Dark Crypto) – שימוש בקריפטו באזורים הלא מוארים של האינטרנט, כולל יתרונות, סכנות, ואתיקה של השימוש במטבעות דיגיטליים באזורים כמו הדארקנט. נחקור כיצד מטבעות קריפטוגרפיים כמו מונרו (XMR) וביטקוין (BTC) משמשים בעסקאות אנונימיות, אילו מנגנוני פרטיות מאפשרים זאת, וכיצד להגן על עצמך מפני הונאות וסיכונים. זהו מדריך למי שרוצה להבין את הצד הפחות מוכר של הקריפטו ולדעת כיצד להשתמש בו בבטחה. 🔥\n\n",
+      image: "https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/darkcrypto" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: "בורסות הקריפטו הגדולות בעולם – המדריך השלם לסוחרים ומשקיעים",
+      description: "המאמר הזה יספק סקירה מקיפה על בורסות הקריפטו הגדולות בעולם. נסביר איך הן פועלות, מה היתרונות והחסרונות של כל אחת, ואילו בורסות נחשבות לבטוחות ולמתקדמות ביותר למסחר בקריפטו. בנוסף, נסקור גורמים חשובים לבחירת בורסה, כולל עמלות, אבטחה, נפח מסחר, ושירות לקוחות. אם אתה מחפש את הפלטפורמה הטובה ביותר לקנייה ומכירה של מטבעות קריפטו – מאמר זה הוא בדיוק בשבילך! 🚀\n\n",
+      image: "https://images.pexels.com/photos/14348480/pexels-photo-14348480.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/thebiggestcryptoexchange" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: "המדריך המלא: איך לפתוח ארנק קריפטו בצורה בטוחה ויעילה",
+      description: "המאמר הזה יספק מדריך מפורט על איך לפתוח ארנק קריפטו בצורה בטוחה ונכונה. במאמר נסקור את סוגי הארנקים הקיימים, נבין כיצד לבחור את הארנק המתאים, נלמד כיצד להגדיר ארנק דיגיטלי שלב אחר שלב, ונבחן דרכים לאבטח את הנכסים הדיגיטליים שלך. בנוסף, נדון בטעויות נפוצות שיש להימנע מהן ונענה על שאלות נפוצות בנושא.\n\n",
+      image: "https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      link: "/blogs/howtoopencryptowallet" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
 
   {
       id: Math.floor(Math.random() * 10000),
