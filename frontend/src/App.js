@@ -25,16 +25,38 @@ import Dogeusdt from './components/Blogs/Pages/Dogeusdt.js';
 import ElonMuskSpacex from './components/Blogs/Pages/ElonMuskSpacex.js';
 import ElonMuskTesla from './components/Blogs/Pages/ElonMuskTesla.js';
 import BigcompanyAndBitcoin from './components/Blogs/Pages/BigcompanyAndBitcoin.js';
-// ✅ ייבוא Google Analytics
-import ReactGA from 'react-ga4';
-
-// ✅ אתחול Google Analytics עם ה-ID שלך
-ReactGA.initialize('G-TRGKHQC4LF');
-
 import HowToOpenCryptoWallet from './components/Blogs/Pages/HowToOpenCryptoWallet.js';
 import TheBiggestCryptoExchange from './components/Blogs/Pages/TheBiggestCryptoExchange.js';
 import DarkCrypto from './components/Blogs/Pages/DarkCrypto.js';
 import HowToStartWithCrypto from './components/Blogs/Pages/HowToStartWithCrypto.js';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import ReactGA from 'react-ga4';
+ReactGA.initialize('G-TRGKHQC4LF');
 function App() {
 
   useEffect(() => {
