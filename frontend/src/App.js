@@ -29,7 +29,7 @@ import HowToOpenCryptoWallet from './components/Blogs/Pages/HowToOpenCryptoWalle
 import TheBiggestCryptoExchange from './components/Blogs/Pages/TheBiggestCryptoExchange.js';
 import DarkCrypto from './components/Blogs/Pages/DarkCrypto.js';
 import HowToStartWithCrypto from './components/Blogs/Pages/HowToStartWithCrypto.js';
-import Roeyheshboncrypto from './components/Blogs/Pages/Roeyhesboncrypto.js';
+import Roeyheshboncrypto from './components/Blogs/Pages/Roeyheshboncrypto.js';
 
 
 
