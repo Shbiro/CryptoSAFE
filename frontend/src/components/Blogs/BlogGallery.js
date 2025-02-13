@@ -20,8 +20,17 @@ import HowToOpenCryptoWallet from './Pages/HowToOpenCryptoWallet.js';
 import TheBiggestCryptoExchange from './Pages/TheBiggestCryptoExchange.js';
 import DarkCrypto from './Pages/DarkCrypto.js';
 import HowToStartWithCrypto from './Pages/HowToStartWithCrypto.js';
+import Roeyheshboncrypto from './Pages/Roeyheshboncrypto.js';
 
 const articles = [
+
+  {
+      id: Math.floor(Math.random() * 10000),
+      title: " רואה חשבון לקריפטו – מי צריך את זה ואיך לבחור נכון",
+      description: "המאמר הזה נועד לכל מי שעוסק בקריפטו ושואל את עצמו האם אני צריך רואה חשבון לקריפטו?. נסביר בפירוט מי צריך רואה חשבון לקריפטו, כיצד מיסוי הקריפטו עובד, איך ניתן להימנע מקנסות מיותרים, אילו שירותים רואה חשבון לקריפטו מספק, ומה חשוב לבדוק לפני שבוחרים רואה חשבון מתאים.\n\nעם ההתפתחות המהירה של שוק הקריפטו, הרשויות החלו לאכוף מיסים על מסחר והחזקת מטבעות דיגיטליים, ולכן ניהול נכון של המיסוי יכול לחסוך לך כסף רב. אם אתה סוחר או משקיע בקריפטו ורוצה להבין איך להתנהל בצורה נכונה מול רשויות המס – המדריך הזה הוא בדיוק בשבילך! 🚀",
+      image: "https://images.pexels.com/photos/7567497/pexels-photo-7567497.jpeg?auto=compress&cs=tinysrgb&w=600",
+      link: "/blogs/roeyheshboncrypto" // ✅ קישור אוטומטי לעמוד הבלוג
+  },
 
   {
       id: Math.floor(Math.random() * 10000),
