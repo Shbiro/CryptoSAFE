@@ -30,7 +30,7 @@ import TheBiggestCryptoExchange from './components/Blogs/Pages/TheBiggestCryptoE
 import DarkCrypto from './components/Blogs/Pages/DarkCrypto.js';
 import HowToStartWithCrypto from './components/Blogs/Pages/HowToStartWithCrypto.js';
 import Roeyheshboncrypto from './components/Blogs/Pages/Roeyheshboncrypto.js';
-
+import LoginPage from './components/Login/LoginPage';
 
 
 
@@ -72,6 +72,7 @@ function App() {
         <div className="App">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/blogs/whatisbitcoin" element={<WhatisBitcoin />} />
             <Route path="/blogs/ethcontarcts" element={<ETHCONTARCTS />} />
             <Route path="/blogs/howkeepsafeyourmoney" element={<HowKeepSafeYourMoney />} />
