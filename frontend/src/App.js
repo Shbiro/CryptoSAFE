@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'; // ✅ הוספת useEffect
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import ReactGA from 'react-ga4';
 import UseScrollToTop from "./hooks/UseScrollToTop"; // ייבוא ה-hook
 import HomePage from './components/HomePage/HomePage';
 import BackOffice from './components/BackOffice/BackOffice';
@@ -53,12 +54,7 @@ import LoginPage from './components/Login/LoginPage';
 
 
 
-
-
-
-import ReactGA from 'react-ga4';
 ReactGA.initialize('G-TRGKHQC4LF');
-
 function App() {
   useEffect(() => {
     // ✅ שליחת PageView לכל שינוי בנתיב

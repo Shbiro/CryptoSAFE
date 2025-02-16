@@ -230,38 +230,40 @@ export default ${fileName};
 
 
 const updateAppRoutes = (fileName) => {
-  const appPath = path.join(process.cwd(), 'frontend/src/App.js');
-
-  // ✅ טוען את הקובץ של `App.js`
-  let appContent = fs.readFileSync(appPath, 'utf8');
-
-  // ✅ בדיקה אם הקובץ כבר מיובא
-  if (!appContent.includes(`./components/Blogs/Pages/${fileName}`)) {
-      console.log(`📝 Updating App.js with new blog: ${fileName}`);
-
-      // ✅ יצירת שורת `import` חדשה
-      const importStatement = `import ${fileName} from './components/Blogs/Pages/${fileName}.js';\n`;
-
-      // ✅ מיקום להוספת ה-import לפני ה-`function App()`
-      const importIndex = appContent.indexOf('function App()');
-      appContent = appContent.slice(0, importIndex) + importStatement + appContent.slice(importIndex);
-
-      // ✅ חיפוש מיקום להוספת ה-`Route` החדש
-      const routeMarker = '<Route path="/blogs" element={<Blogs />} />';
-      const newRoute = `            <Route path="/blogs/${fileName.toLowerCase()}" element={<${fileName} />} />\n`;
-
-      if (appContent.includes(routeMarker)) {
-          appContent = appContent.replace(routeMarker, newRoute + routeMarker);
-      } else {
-          console.error("❌ Could not find Route marker in App.js!");
-          return;
-      }
-
-      // ✅ כתיבת העדכון לקובץ `App.js`
-      fs.writeFileSync(appPath, appContent, 'utf8');
-      console.log(`✅ App.js updated with new route: /blogs/${fileName.toLowerCase()}`);
-  }
-};
+    const appPath = path.join(process.cwd(), 'frontend/src/App.js');
+  
+    // ✅ טוען את הקובץ של `App.js`
+    let appContent = fs.readFileSync(appPath, 'utf8');
+  
+    // ✅ בדיקה אם הקובץ כבר מיובא
+    if (!appContent.includes(`./components/Blogs/Pages/${fileName}`)) {
+        console.log(`📝 Updating App.js with new blog: ${fileName}`);
+  
+        // ✅ יצירת שורת `import` חדשה
+        const importStatement = `import ${fileName} from './components/Blogs/Pages/${fileName}.js';\n`;
+  
+        // ✅ חיפוש הייבוא האחרון בקובץ והוספת הייבוא החדש אחריו
+        const lastImportIndex = appContent.lastIndexOf('import ');
+        const nextLineIndex = appContent.indexOf('\n', lastImportIndex) + 1;
+        appContent = appContent.slice(0, nextLineIndex) + importStatement + appContent.slice(nextLineIndex);
+  
+        // ✅ חיפוש מיקום להוספת ה-`Route` החדש
+        const routeMarker = '<Route path="/blogs" element={<Blogs />} />';
+        const newRoute = `            <Route path="/blogs/${fileName.toLowerCase()}" element={<${fileName} />} />\n`;
+  
+        if (appContent.includes(routeMarker)) {
+            appContent = appContent.replace(routeMarker, newRoute + routeMarker);
+        } else {
+            console.error("❌ Could not find Route marker in App.js!");
+            return;
+        }
+  
+        // ✅ כתיבת העדכון לקובץ `App.js`
+        fs.writeFileSync(appPath, appContent, 'utf8');
+        console.log(`✅ App.js updated with new route: /blogs/${fileName.toLowerCase()}`);
+    }
+  };
+  
 
 
 const updateBlogGallery = (fileName, title, seoDescription, image) => {
