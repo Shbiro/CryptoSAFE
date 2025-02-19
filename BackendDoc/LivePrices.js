@@ -1,35 +1,41 @@
 const express = require('express');
-const Airtable = require('airtable');
+const fs = require('fs');
+const path = require('path');
+const csv = require('csv-parser');
 
 const router = express.Router();
 
-// Airtable credentials
-const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
-const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
-const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME;
+// 🔹 נתיב לקובץ ה-CSV
+const CSV_FILE_PATH = path.join(__dirname, '../Python/LivePrice.csv');
 
-// Initialize Airtable
-const base = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_BASE_ID);
+// פונקציה לקרוא את הקובץ CSV ולפרסר את הנתונים
+const readCsvFile = async () => {
+    return new Promise((resolve, reject) => {
+        const results = [];
 
-// API to fetch crypto prices from Airtable
+        fs.createReadStream(CSV_FILE_PATH)
+            .pipe(csv())
+            .on('data', (data) => results.push(data))
+            .on('end', () => {
+                if (results.length > 0) {
+                    resolve(results[0]); // מחזיר רק את השורה הראשונה (הנתונים העדכניים ביותר)
+                } else {
+                    reject("No data found in CSV");
+                }
+            })
+            .on('error', (error) => reject(error));
+    });
+};
+
+// API להחזרת הנתונים מקובץ CSV
 router.get('/api/prices', async (req, res) => {
-  try {
-    const records = await base(AIRTABLE_TABLE_NAME).select().firstPage();
-    const prices = records.map((record) => ({
-      BitcoinPrice: record.fields.BitcoinPrice || "N/A",
-      XrpPrice: record.fields.XrpPrice || "N/A",
-      EthPrice: record.fields.EthPrice || "N/A",
-      DogePrice: record.fields.DogePrice || "N/A",
-      CardanoPrice: record.fields.CardanoPrice || "N/A",
-      LitecoinPrice: record.fields.LitecoinPrice || "N/A",
-      BNBPrice: record.fields.BnbPrice || "N/A",
-      PolkadotPrice: record.fields.PolkadotPrice || "N/A",
-    }));
-    res.json(prices[0]);
-  } catch (error) {
-    console.error('Error fetching data from Airtable:', error);
-    res.status(500).json({ error: 'Failed to fetch data from Airtable' });
-  }
+    try {
+        const prices = await readCsvFile();
+        res.json(prices);
+    } catch (error) {
+        console.error('❌ Error fetching data from CSV:', error);
+        res.status(500).json({ error: 'Failed to fetch data from CSV' });
+    }
 });
 
 module.exports = router;

@@ -1,27 +1,19 @@
 import time
 import requests
-from binance.client import Client
-from airtable import Airtable
-from dotenv import load_dotenv
+import csv
 import os
+from binance.client import Client
+from dotenv import load_dotenv
 
-# Load environment variables from .env file
+# Load environment variables from 2.env file
 load_dotenv("2.env")
 
 # Binance API credentials
 API_KEY = os.getenv('BINANCE_API_KEY')
 API_SECRET = os.getenv('BINANCE_API_SECRET')
 
-# Airtable credentials
-AIRTABLE_API_KEY = os.getenv('AIRTABLE_API_KEY')
-AIRTABLE_BASE_ID = os.getenv('AIRTABLE_BASE_ID')
-AIRTABLE_TABLE_NAME = os.getenv('AIRTABLE_TABLE_NAME')
-
 # Initialize Binance client
 client = Client(API_KEY, API_SECRET)
-
-# Initialize Airtable table
-airtable = Airtable(AIRTABLE_BASE_ID, AIRTABLE_TABLE_NAME, api_key=AIRTABLE_API_KEY)
 
 # Cryptocurrency symbols
 crypto_symbols = {
@@ -35,14 +27,23 @@ crypto_symbols = {
     "PolkadotPrice": "DOTUSDT"
 }
 
+# CSV File Path
+CSV_FILE = "LivePrice.csv"
+
+def write_csv_header():
+    """Creates or overwrites the CSV file with headers only."""
+    with open(CSV_FILE, mode='w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        headers = ["Timestamp"] + list(crypto_symbols.keys())
+        writer.writerow(headers)
+    print(f"✅ CSV file initialized: {CSV_FILE}")
+
 def fetch_crypto_prices():
-    """
-    Fetch crypto prices from Binance API with error handling.
-    """
+    """Fetch crypto prices from Binance API with error handling."""
     prices = {}
     for field, symbol in crypto_symbols.items():
         try:
-            ticker = client.get_symbol_ticker(symbol=symbol)  # ✅ תוקן - שימוש נכון בפונקציה
+            ticker = client.get_symbol_ticker(symbol=symbol)
             prices[field] = str(float(ticker['price']))
         except requests.exceptions.RequestException as e:
             print(f"⚠️ Network error fetching {symbol}: {e}")
@@ -50,52 +51,40 @@ def fetch_crypto_prices():
         except Exception as e:
             print(f"⚠️ Error fetching {symbol}: {e}")
             prices[field] = "N/A"
-
     return prices
 
-def update_airtable(prices):
-    """
-    Update the first row in Airtable with new prices.
-    """
+def update_csv(prices):
+    """Updates the first row of the CSV file with the latest prices."""
     try:
-        records = airtable.get_all()
-        if not records:
-            print("❌ No records found in Airtable.")
-            return False
+        timestamp = time.strftime('%Y-%m-%d %H:%M:%S')  # Create timestamp
+        row = [timestamp] + [prices[symbol] for symbol in crypto_symbols.keys()]
+        
+        # Overwrite CSV with new data
+        with open(CSV_FILE, mode='w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file)
+            headers = ["Timestamp"] + list(crypto_symbols.keys())
+            writer.writerow(headers)  # Write headers again
+            writer.writerow(row)  # Write new data
 
-        first_record_id = records[0]['id']
-        
-        # ✅ ביצוע Retry עד 3 פעמים במקרה של כשל
-        for attempt in range(3):
-            try:
-                airtable.update(first_record_id, prices)
-                print("✅ Successfully updated Airtable!")
-                return True
-            except requests.exceptions.RequestException as e:
-                print(f"⚠️ Error updating Airtable (attempt {attempt+1}/3): {e}")
-                time.sleep(2)  # ✅ חכה 2 שניות לפני ניסיון נוסף
-        
-        print("❌ Failed to update Airtable after 3 attempts.")
-        return False
+        print(f"✅ CSV updated with latest prices at {timestamp}")
     except Exception as e:
-        print(f"🚨 Unexpected error updating Airtable: {e}")
-        return False
+        print(f"❌ Error updating CSV: {e}")
 
 def update_crypto_prices():
-    """
-    Fetch crypto prices and update Airtable continuously.
-    """
+    """Fetch crypto prices and update CSV continuously."""
+    write_csv_header()  # Initialize CSV with headers
+
     while True:
         try:
             prices = fetch_crypto_prices()
-            update_airtable(prices)
-            time.sleep(15)  # ✅ שינוי מ-1 שנייה ל-5 שניות כדי להפחית עומס על השרתים
+            update_csv(prices)
+            time.sleep(2)  # ✅ Update every 15 seconds
         except KeyboardInterrupt:
             print("\n🛑 Stopping the script...")
             break
         except Exception as e:
             print(f"🚨 Unexpected error in main loop: {e}")
-            time.sleep(5)  # ✅ חכה 5 שניות לפני ניסיון נוסף
+            time.sleep(2)
 
 if __name__ == "__main__":
     update_crypto_prices()
