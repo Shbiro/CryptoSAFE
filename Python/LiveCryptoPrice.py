@@ -31,10 +31,10 @@ crypto_symbols = {
 CSV_FILE = "LivePrice.csv"
 
 def write_csv_header():
-    """Creates or overwrites the CSV file with headers only."""
+    """Creates or overwrites the CSV file with headers only (without timestamp)."""
     with open(CSV_FILE, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        headers = ["Timestamp"] + list(crypto_symbols.keys())
+        headers = list(crypto_symbols.keys())  # 🔹 הסר את ה-Timestamp
         writer.writerow(headers)
     print(f"✅ CSV file initialized: {CSV_FILE}")
 
@@ -54,19 +54,18 @@ def fetch_crypto_prices():
     return prices
 
 def update_csv(prices):
-    """Updates the first row of the CSV file with the latest prices."""
+    """Updates the first row of the CSV file with the latest prices (without timestamp)."""
     try:
-        timestamp = time.strftime('%Y-%m-%d %H:%M:%S')  # Create timestamp
-        row = [timestamp] + [prices[symbol] for symbol in crypto_symbols.keys()]
-        
+        row = [prices[symbol] for symbol in crypto_symbols.keys()]  # 🔹 הסר את ה-Timestamp
+
         # Overwrite CSV with new data
         with open(CSV_FILE, mode='w', newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
-            headers = ["Timestamp"] + list(crypto_symbols.keys())
+            headers = list(crypto_symbols.keys())  # 🔹 הסר את ה-Timestamp
             writer.writerow(headers)  # Write headers again
             writer.writerow(row)  # Write new data
 
-        print(f"✅ CSV updated with latest prices at {timestamp}")
+        print(f"✅ CSV updated with latest prices")
     except Exception as e:
         print(f"❌ Error updating CSV: {e}")
 
@@ -78,7 +77,7 @@ def update_crypto_prices():
         try:
             prices = fetch_crypto_prices()
             update_csv(prices)
-            time.sleep(2)  # ✅ Update every 15 seconds
+            time.sleep(2)  # ✅ Update every 2 seconds
         except KeyboardInterrupt:
             print("\n🛑 Stopping the script...")
             break
