@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv("2.env")
 
 # Binance API credentials
 API_KEY = os.getenv('BINANCE_API_KEY')
@@ -89,7 +89,7 @@ def update_crypto_prices():
         try:
             prices = fetch_crypto_prices()
             update_airtable(prices)
-            time.sleep(5)  # ✅ שינוי מ-1 שנייה ל-5 שניות כדי להפחית עומס על השרתים
+            time.sleep(15)  # ✅ שינוי מ-1 שנייה ל-5 שניות כדי להפחית עומס על השרתים
         except KeyboardInterrupt:
             print("\n🛑 Stopping the script...")
             break
