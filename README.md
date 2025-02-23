@@ -1,4 +1,4 @@
-# Cryptosafe
+# Cryptosafe.co.il
 
 Welcome to **Cryptosafe**, a robust and secure platform for managing and tracking cryptocurrency assets. Built with **React** on the frontend and **Node.js** on the backend, Cryptosafe offers a seamless and user-friendly experience for crypto enthusiasts and traders.
 
